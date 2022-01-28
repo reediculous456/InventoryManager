@@ -34,8 +34,8 @@ Talk about what the app will do here...
 ## Scrum Roles
 
 * **Scrum Master, Product Owner, and Github Admin:** Wes Reed
-* **UI Specialist:**
-* **Business Logic and Persistence Expert:**
+* **UI Specialist:** Daniel Cullen
+* **Business Logic and Persistence Expert:** Matthew Saling and Christopher Elbe
 
 ## Weekly Meetings
 
