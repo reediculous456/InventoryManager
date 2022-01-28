@@ -4,7 +4,7 @@ Inventory Management Application for IT 4045 Enterprise App Development
 
 Design Document
 
-Wes Reed, Matthew Saling, and Daniel Cullen
+Wes Reed, Matthew Saling, Daniel Cullen, and Christopher Elbe
 
 ## Introduction
 
