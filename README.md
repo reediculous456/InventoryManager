@@ -16,9 +16,9 @@ Talk about what the app will do here...
 
 ## Requirements
 
-* [Requirement 1: Do a thing](docs/requirements/Requirement1.md)
-* [Requirement 2: Do another thing](docs/requirements/Requirement2.md)
-* [Requirement 3: Do yet another thing](docs/requirements/Requirement3.md)
+* [Requirement 1: Create and Item](docs/requirements/Requirement1.md)
+* [Requirement 2: Add to inventory](docs/requirements/Requirement2.md)
+* [Requirement 3: Asset Management](docs/requirements/Requirement3.md)
 
 ## Class Diagram
 
