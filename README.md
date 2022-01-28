@@ -19,6 +19,7 @@ Talk about what the app will do here...
 * [Requirement 1: Do a thing](docs/requirements/Requirement1.md)
 * [Requirement 2: Do another thing](docs/requirements/Requirement2.md)
 * [Requirement 3: Do yet another thing](docs/requirements/Requirement3.md)
+* [Requirement 4: Do yet another thing](docs/requirements/Requirement4.md)
 
 ## Class Diagram
 
