@@ -29,6 +29,7 @@ Talk about what the app will do here...
 
 ## API JSON Schema
 
+[Linkg to API JSON Schema](docs/JSONAPI.md)
 ## Scrum Roles
 
 * **Scrum Master, Product Owner, and Github Admin:** Wes Reed
