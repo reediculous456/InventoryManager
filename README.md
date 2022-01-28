@@ -39,5 +39,4 @@ Talk about what the app will do here...
 
 ## Weekly Meetings
 
-* [Standup SomeDay from X to X]()
-* [Meeting SomeDay from X to X]()
+* [Standup Wednesday from 7 to 7:30](https://teams.microsoft.com/l/meetup-join/19%3ameeting_MmQ0Mzc0ZGQtZmVjMi00NGExLTlkNGYtOTc5OGFkOGUwMWRl%40thread.v2/0?context=%7b%22Tid%22%3a%22f5222e6c-5fc6-48eb-8f03-73db18203b63%22%2c%22Oid%22%3a%22e1b08e73-d2dd-449a-848e-db26cd974c04%22%7d)
