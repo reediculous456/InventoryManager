@@ -1,4 +1,4 @@
-# Requirement 1: Do yet another thing
+# Requirement 1: Assign items to an employee or customer
 
 ## Scenario
 
