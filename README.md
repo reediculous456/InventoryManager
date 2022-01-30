@@ -14,9 +14,9 @@ Inventory Manager is an application for tracking your companies assets. This inc
 
 ## Requirements
 
-* [Requirement 1: Do a thing](docs/requirements/Requirement1.md)
-* [Requirement 2: Do another thing](docs/requirements/Requirement2.md)
-* [Requirement 3: Do yet another thing](docs/requirements/Requirement3.md)
+* [Requirement 1: Create an Item](docs/requirements/Requirement1.md)
+* [Requirement 2: Add to inventory](docs/requirements/Requirement2.md)
+* [Requirement 3: Asset Management](docs/requirements/Requirement3.md)
 
 ## Class Diagram
 
