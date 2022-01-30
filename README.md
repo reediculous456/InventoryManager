@@ -12,6 +12,8 @@ Inventory Manager is an application for tracking your companies assets. This inc
 
 [Link to Storyboard](https://projects.invisionapp.com/prototype/ckz1n0yp4001nz50197yyo2fc/play)
 
+<img src="docs/assets/storyboard.png" width="800" alt="Storyboard Screenshot">
+
 ## Requirements
 
 * [Requirement 1: Create an Item](docs/requirements/Requirement1.md)
