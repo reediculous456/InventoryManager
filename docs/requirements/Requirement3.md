@@ -1,4 +1,4 @@
-# Requirement 1: Assign items to an employee or customer
+# Requirement 3: Assign items to an employee or customer
 
 ## Scenario
 
