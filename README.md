@@ -6,11 +6,11 @@ Wes Reed, Matthew Saling, Daniel Cullen, and Christopher Elbe
 
 ## Introduction
 
-Inventory Manager is an application for tracking your companies assets. This includes how many of each asset your company has and which employee has possession of each item. 
+Inventory Manager is an application for tracking your companies assets. This includes how many of each asset your company has and which employee has possession of each item.
 
 ## Storyboard
 
-[Link to Storyboard]()
+[Link to Storyboard](https://projects.invisionapp.com/prototype/ckz1n0yp4001nz50197yyo2fc/play)
 
 ## Requirements
 
