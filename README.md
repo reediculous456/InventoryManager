@@ -31,6 +31,22 @@ Inventory Manager is an application for tracking your companies assets. This inc
 
 ## API JSON Schema
 
+For our JSON API Schema we will have the ability to reach out via rest endpoint and get a list of items in inventory with who it's assigned to.
+The JSON object will look like this:
+
+```jsonc
+{
+  "unique_id": "string", // required
+  "object_name": "string", // required
+  "assigned_to": "string",
+  "location": "string",
+  "description": "string",
+  "last_updated": "Date"
+}
+```
+
+This will allow our users to be able to get data about the object, and search for objects containing specific information.
+
 ## Scrum Roles
 
 * **Scrum Master, Product Owner, and Github Admin:** Wes Reed
