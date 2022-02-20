@@ -18,7 +18,7 @@ public class ItemServiceStub implements IItemService{
     }
 
     @Override
-    public Item fetch(int id) {
+    public Item fetchItemById(int id) {
         Item item = new Item();
         item.setDescription("Test Description");
         item.setId(id);
