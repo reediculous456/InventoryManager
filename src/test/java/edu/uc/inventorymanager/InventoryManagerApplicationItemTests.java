@@ -14,7 +14,6 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 class InventoryManagerApplicationItemTests {
 
     @Autowired
-
     IItemService itemService;
     private Item item;
 
@@ -24,13 +23,11 @@ class InventoryManagerApplicationItemTests {
     }
 
     @Test
-    void fetchItemById_returnsItemId5(){
+    void fetchItemById_returnsItemId5() {
         givenItemDataAreAvailable();
         whenSearchItemWithId5();
         thenReturnItemForId5();
     }
-
-
 
     private void whenSearchItemWithId5() {
         item = itemService.fetchItemById(5);

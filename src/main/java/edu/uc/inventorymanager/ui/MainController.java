@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 public class MainController {
     /**
      * Handle the / endpoint
+     *
      * @return
      */
     @RequestMapping("/")
@@ -21,29 +22,35 @@ public class MainController {
 
     /**
      * Fetch item with given ID
-     *
+     * <p>
      * Given the parameter id, find an item that corresponds to this unique id.
-     *
+     * <p>
      * Returns one of the following status codes:
      * 200: item found
      * 400: item not found
+     *
      * @param id
      * @return
      */
     @GetMapping("/item/{id}")
-    public ResponseEntity fetchItemById(@PathVariable("id") String id) { return new ResponseEntity(HttpStatus.OK);}
+    public ResponseEntity fetchItemById(@PathVariable("id") String id) {
+        return new ResponseEntity(HttpStatus.OK);
+    }
 
     /**
      * Fetch user with given ID
-     *
+     * <p>
      * Given the parameter id, find an user that corresponds to this unique id.
-     *
+     * <p>
      * Returns one of the following status codes:
      * 200: user found
      * 400: user not found
+     *
      * @param id
      * @return
      */
     @GetMapping("/user/{id}")
-    public ResponseEntity fetchUserById(@PathVariable("id") String id) { return new ResponseEntity(HttpStatus.OK);}
+    public ResponseEntity fetchUserById(@PathVariable("id") String id) {
+        return new ResponseEntity(HttpStatus.OK);
+    }
 }

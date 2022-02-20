@@ -20,7 +20,7 @@ public class InventoryManagerApplicationUserTests {
     }
 
     @Test
-    void fetchUserById_returnsUserId5(){
+    void fetchUserById_returnsUserId5() {
         givenUserDataAreAvailable();
         whenSearchUserWithId5();
         thenReturnUserForId5();

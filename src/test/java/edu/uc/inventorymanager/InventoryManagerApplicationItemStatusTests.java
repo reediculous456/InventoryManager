@@ -22,7 +22,7 @@ public class InventoryManagerApplicationItemStatusTests {
     }
 
     @Test
-    void fetchItemStatusById_returnsItemStatusId5(){
+    void fetchItemStatusById_returnsItemStatusId5() {
         givenItemStatusDataAreAvailable();
         whenSearchItemStatusWithId5();
         thenReturnItemStatusForId5();

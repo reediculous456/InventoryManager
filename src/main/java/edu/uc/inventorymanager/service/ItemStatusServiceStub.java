@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
 import java.util.List;
 
 @Component
-public class ItemStatusServiceStub implements IItemStatusService{
+public class ItemStatusServiceStub implements IItemStatusService {
 
     @Override
     public void save(ItemStatus itemStatus) {
