@@ -1,11 +1,23 @@
 <!doctype html>
-<html lang="en">
+<html xmlns:th="http://www/thymeleaf.org" lang="en">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="Wesley Reed">
     <title>Inventory Manager</title>
+
+    <!--<form action="/action_page.php">
+        <label for="itemName">Item name:</label>
+        <input type="text" id="itemName" name="itemName"><br><br>
+        <label for="itemDescription">Item Description:</label>
+        <input type="text" id="itemDescription" name="itemDescription"><br><br>
+        <label for="location">Location:</label>
+        <input type="text" id="location" name="location"><br><br>
+        <input type="submit" value="Submit">
+    </form>
+    -->
+    <p th:text="${item}"/>
 
 
     <!-- Bootstrap core CSS -->
@@ -37,3 +49,4 @@
 
 </body>
 </html>
+
