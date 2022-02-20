@@ -26,11 +26,14 @@ public class MainController {
         model.addAttribute(item);
         return "index";
     }
+
     @RequestMapping("saveItem")
     public String saveItem(Item item){
         //itemService.save(item);
         return "index";
     }
+
+
     /*
     @PostMapping(value ="/item", consumes="application/json", produces = "application/json")
     @ResponseBody

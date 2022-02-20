@@ -5,7 +5,7 @@ import edu.uc.inventorymanager.dto.Item;
 import java.util.List;
 
 public interface IItemService {
-    void save(Item item);
+    Item save(Item item) throws Exception;
 
     List<Item> fetchALl();
 
