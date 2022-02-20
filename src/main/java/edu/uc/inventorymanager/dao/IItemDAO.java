@@ -9,4 +9,6 @@ public interface IItemDAO {
     Item save(Item item) throws Exception;
 
     List<Item> fetchAll();
+
+    Item fetch(int id);
 }

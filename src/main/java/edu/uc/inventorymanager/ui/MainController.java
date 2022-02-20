@@ -29,13 +29,15 @@ public class MainController {
         return "index";
     }
 
-    @RequestMapping("saveItem")
+    @RequestMapping("/saveItem")
     public String saveItem(Item item){
         //itemService.save(item);
         return "index";
     }
 
-
+    @GetMapping("/item")
+    @ResponseBody
+    public List<Item> fetchAllItems() {return itemService.fetchAll();}
 
     /*
     @PostMapping(value ="/item", consumes="application/json", produces = "application/json")
@@ -49,11 +51,11 @@ public class MainController {
         }
     }
      */
-    @GetMapping("/item")
-    @ResponseBody
-    public List<Item> fetchAllItems(){
-        return itemService.fetchAll();
-    }
+    //@GetMapping("/item")
+    //@ResponseBody
+    //public List<Item> fetchAllItems(){
+    //    return itemService.fetchAll();
+    //}
 
 
     //public String index() {

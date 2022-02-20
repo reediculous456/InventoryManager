@@ -1,3 +1,4 @@
+/*
 package edu.uc.inventorymanager.service;
 
 import edu.uc.inventorymanager.dao.IUserDAO;
@@ -12,9 +13,9 @@ public class IUserServiceStub implements IUserService{
     @Autowired
     private IUserDAO userDAO;
 
-    public UserServiceStub(){
+    //public UserServiceStub(){
 
-    }
+    //}
     @Override
     public User save(User user) throws Exception{
         return userDAO.save(user);
@@ -30,3 +31,5 @@ public class IUserServiceStub implements IUserService{
         return null;
     }
 }
+
+ */

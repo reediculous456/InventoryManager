@@ -11,5 +11,5 @@ public interface IItemService {
 
     Item fetch(int id);
 
-    void assign(int userId);
+    Item assign(int userId);
 }

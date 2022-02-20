@@ -29,11 +29,12 @@ public class ItemServiceStub implements IItemService{
 
     @Override
     public Item fetch(int id) {
-        return null;
+        Item foundItem = itemDAO.fetch(id);
+        return foundItem;
     }
 
     @Override
-    public void assign(int userId) {
-
+    public Item assign(int userId) {
+    return null;
     }
 }
