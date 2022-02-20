@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import java.util.List;
+
 @Controller
 public class MainController {
     /**
@@ -34,6 +36,7 @@ public class MainController {
     }
 
 
+
     /*
     @PostMapping(value ="/item", consumes="application/json", produces = "application/json")
     @ResponseBody
@@ -47,7 +50,13 @@ public class MainController {
     }
      */
     @GetMapping("/item")
-    public String index() {
-        return "index";
+    @ResponseBody
+    public List<Item> fetchAllItems(){
+        return itemService.fetchAll();
     }
+
+
+    //public String index() {
+     //   return "index";
+    //}
 }

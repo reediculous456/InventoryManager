@@ -5,7 +5,7 @@ import edu.uc.inventorymanager.dto.User;
 import java.util.List;
 
 public interface IUserService {
-    void save(User user);
+    User save(User user) throws Exception;
 
     List<User> fetchALl();
 
