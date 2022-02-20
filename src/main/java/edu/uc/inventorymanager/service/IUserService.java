@@ -9,5 +9,5 @@ public interface IUserService {
 
     List<User> fetchALl();
 
-    User fetch(int id);
+    User fetchUserById(int id);
 }

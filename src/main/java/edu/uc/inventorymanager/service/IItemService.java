@@ -9,7 +9,7 @@ public interface IItemService {
 
     List<Item> fetchALl();
 
-    Item fetch(int id);
-
     void assign(int userId);
+
+    Item fetchItemById(int id);
 }
