@@ -30,6 +30,6 @@ public class IUserServiceStub implements IUserService{
     public User fetch(int id) {
         return null;
     }
-}
+}//
 
  */

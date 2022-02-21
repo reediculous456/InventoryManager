@@ -12,3 +12,4 @@ public interface IItemDAO {
 
     Item fetch(int id);
 }
+//

@@ -26,5 +26,5 @@ public class ItemStatusServiceStub implements IItemStatusService {
         itemStatus.setName("Test Name");
         itemStatus.setId(id);
         return itemStatus;
-    }
+    }//
 }
