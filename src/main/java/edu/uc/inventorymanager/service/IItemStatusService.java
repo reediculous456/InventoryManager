@@ -10,6 +10,5 @@ public interface IItemStatusService {
 
     List<ItemStatus> fetchALl();
 
-
     ItemStatus fetchItemStatusById(int i);
 }
