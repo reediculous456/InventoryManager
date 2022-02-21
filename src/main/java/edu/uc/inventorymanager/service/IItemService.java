@@ -7,7 +7,7 @@ import java.util.List;
 public interface IItemService {
     Item save(Item item) throws Exception;
 
-    List<Item> fetchALl();
+    List<Item> fetchAll();
 
     Item fetch(int id);
 
