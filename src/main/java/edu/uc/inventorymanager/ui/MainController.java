@@ -2,33 +2,32 @@ package edu.uc.inventorymanager.ui;
 
 
 import edu.uc.inventorymanager.dto.Item;
-import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
-
-import java.util.List;
-
+import edu.uc.inventorymanager.service.IItemService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import java.util.List;
+
 
 @Controller
 public class MainController {
+    @Autowired
+    IItemService itemService;
+
     /**
      * Handle the / endpoint
      *
      * @return
      */
     @RequestMapping("/")
-    public String index(Model model){
+    public String index(Model model) {
         Item item = new Item();
         item.setId(0);
         item.setName("item");
@@ -42,14 +41,16 @@ public class MainController {
 
 
     @RequestMapping("/saveItem")
-    public String saveItem(Item item){
+    public String saveItem(Item item) {
         //itemService.save(item);
         return "index";
     }
 
     @GetMapping("/item")
     @ResponseBody
-    public List<Item> fetchAllItems() {return itemService.fetchAll();}
+    public List<Item> fetchAllItems() {
+        return itemService.fetchAll();
+    }
 
     /*
     @PostMapping(value ="/item", consumes="application/json", produces = "application/json")
@@ -63,16 +64,6 @@ public class MainController {
         }
     }
      */
-    //@GetMapping("/item")
-    //@ResponseBody
-    //public List<Item> fetchAllItems(){
-    //    return itemService.fetchAll();
-    //}
-
-
-    //public String index() {
-     //   return "index";
-    //}
 
     /**
      * Fetch item with given ID
@@ -107,5 +98,4 @@ public class MainController {
     public ResponseEntity fetchUserById(@PathVariable("id") String id) {
         return new ResponseEntity(HttpStatus.OK);
     }
-
 }

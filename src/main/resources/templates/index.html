@@ -10,7 +10,7 @@
 
     <!--Dan's stuff-->
     <p th:text="${item}"/>
-    <form action="#" th:action="@{/saveItem}" th:object=${item}" method ="GET">
+    <form action="#" th:action="@{/saveItem}" th:object=${item}" method="GET">
         <label>Item name:</label>
         <input type="text" name="name" th:field="*{name}"><br><br>
         <label>Item Description:</label>
@@ -23,9 +23,8 @@
         <input type="text" name="status_id" th:field="*{status_id}"><br><br>
         <label>Item ID</label>
         <input type="text" name="id" th:field="*{id}"><br><br>
-        <button name="submit" type="submit" value = "0"></button>
+        <button name="submit" type="submit" value="0"></button>
     </form>
-
 
 
     <!--End of Dan's stuff-->

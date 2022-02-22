@@ -8,7 +8,7 @@ import java.util.List;
 
 
 @Repository
-public class ItemDAOStub implements IItemDAO{
+public class ItemDAOStub implements IItemDAO {
 
     List<Item> allItems = new ArrayList<Item>();
 
@@ -21,5 +21,10 @@ public class ItemDAOStub implements IItemDAO{
     @Override
     public List<Item> fetchAll() {
         return allItems;
+    }
+
+    @Override
+    public Item fetchById(int id) {
+        return null;
     }
 }

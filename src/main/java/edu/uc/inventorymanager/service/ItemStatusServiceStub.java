@@ -1,8 +1,6 @@
 package edu.uc.inventorymanager.service;
 
-import edu.uc.inventorymanager.dto.Item;
 import edu.uc.inventorymanager.dto.ItemStatus;
-import edu.uc.inventorymanager.dto.User;
 import org.springframework.stereotype.Component;
 
 import java.util.List;

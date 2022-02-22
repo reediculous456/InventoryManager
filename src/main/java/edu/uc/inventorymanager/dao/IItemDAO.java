@@ -10,5 +10,5 @@ public interface IItemDAO {
 
     List<Item> fetchAll();
 
-    Item fetch(int id);
+    Item fetchById(int id);
 }
