@@ -1,9 +1,7 @@
 package edu.uc.inventorymanager;
 
 import edu.uc.inventorymanager.dto.ItemStatus;
-import edu.uc.inventorymanager.dto.User;
 import edu.uc.inventorymanager.service.IItemStatusService;
-import edu.uc.inventorymanager.service.IUserService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;

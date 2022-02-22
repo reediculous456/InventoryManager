@@ -1,9 +1,7 @@
 package edu.uc.inventorymanager;
 
 import edu.uc.inventorymanager.dto.Item;
-import edu.uc.inventorymanager.dto.User;
 import edu.uc.inventorymanager.service.IItemService;
-import edu.uc.inventorymanager.service.IUserService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -16,7 +14,6 @@ class InventoryManagerApplicationItemTests {
     @Autowired
     IItemService itemService;
     private Item item;
-
 
     @Test
     void contextLoads() {

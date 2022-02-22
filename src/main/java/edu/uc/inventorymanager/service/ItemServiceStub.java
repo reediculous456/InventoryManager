@@ -1,19 +1,35 @@
 package edu.uc.inventorymanager.service;
 
+
+import edu.uc.inventorymanager.dao.IItemDAO;
 import edu.uc.inventorymanager.dto.Item;
-import org.springframework.stereotype.Component;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-@Component
+@Service
 public class ItemServiceStub implements IItemService {
-    @Override
-    public void save(Item item) {
+
+    @Autowired
+    private IItemDAO itemDAO;
+
+    public ItemServiceStub() {
 
     }
 
     @Override
-    public List<Item> fetchALl() {
+    public Item save(Item item) throws Exception {
+        return itemDAO.save(item);
+    }
+
+    @Override
+    public List<Item> fetchAll() {
+        return itemDAO.fetchAll();
+    }
+
+    @Override
+    public Item assign(int userId) {
         return null;
     }
 
@@ -21,10 +37,5 @@ public class ItemServiceStub implements IItemService {
     public Item fetchItemById(int id) {
         Item item = new Item(id, "Test Description");
         return item;
-    }
-
-    @Override
-    public void assign(int userId) {
-
     }
 }

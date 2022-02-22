@@ -1,4 +1,4 @@
-# InventoryManager
+# InventoryManager [![Java CI with Maven](https://github.com/reediculous456/InventoryManager/actions/workflows/maven.yml/badge.svg)](https://github.com/reediculous456/InventoryManager/actions/workflows/maven.yml)
 
 Design Document
 
