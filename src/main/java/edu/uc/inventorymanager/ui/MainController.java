@@ -28,13 +28,11 @@ public class MainController {
      */
     @RequestMapping("/")
     public String index(Model model) {
-        Item item = new Item();
-        item.setId(0);
-        item.setName("item");
+        Item item = new Item(0, "item");
         item.setDescription("Des");
         item.setLocation("locale");
-        item.setAssigned_to(1);
-        item.setStatus_id(0);
+        item.setAssignedTo(1);
+        item.setStatusId(0);
         model.addAttribute(item);
         return "index";
     }
