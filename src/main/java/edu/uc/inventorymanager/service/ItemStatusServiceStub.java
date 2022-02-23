@@ -21,7 +21,7 @@ public class ItemStatusServiceStub implements IItemStatusService {
     @Override
     public ItemStatus fetchItemStatusById(int id) {
         ItemStatus itemStatus = new ItemStatus();
-        itemStatus.setName("Test Name");
+        itemStatus.setItemName("Test Name");
         itemStatus.setId(id);
         return itemStatus;
     }

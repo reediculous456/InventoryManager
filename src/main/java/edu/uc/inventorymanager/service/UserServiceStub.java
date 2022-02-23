@@ -20,7 +20,7 @@ public class UserServiceStub implements IUserService {
     @Override
     public User fetchUserById(int id) {
         User user = new User();
-        user.setName("Test Name");
+        user.setUserName("Test Name");
         user.setId(id);
         return user;
     }

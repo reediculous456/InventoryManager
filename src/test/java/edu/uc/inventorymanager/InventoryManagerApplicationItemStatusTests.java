@@ -35,7 +35,7 @@ public class InventoryManagerApplicationItemStatusTests {
     }
 
     private void thenReturnItemStatusForId5() {
-        String name = itemStatus.getName();
+        String name = itemStatus.getItemName();
         assertEquals("Test Name", name);
     }
 }
