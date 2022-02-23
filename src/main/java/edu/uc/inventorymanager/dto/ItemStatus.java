@@ -4,5 +4,5 @@ import lombok.Data;
 
 public @Data class ItemStatus {
     private int id;
-    private String name;
+    private String ItemName;
 }

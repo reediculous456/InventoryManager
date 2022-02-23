@@ -27,6 +27,7 @@ public class InventoryManagerApplicationItemStatusTests {
     }
 
     private void whenSearchItemStatusWithId5() {
+
         itemStatus = itemStatusService.fetchItemStatusById(5);
     }
 
