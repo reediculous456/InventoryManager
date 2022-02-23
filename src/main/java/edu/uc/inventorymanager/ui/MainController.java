@@ -30,7 +30,7 @@ public class MainController {
     public String index(Model model) {
         Item item = new Item();
         item.setId(0);
-        item.setName("item");
+        item.setItemName("item");
         item.setDescription("Des");
         item.setLocation("locale");
         item.setAssigned_to(1);
