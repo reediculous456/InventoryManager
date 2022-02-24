@@ -39,17 +39,18 @@
 
 <!--Dan's stufff-->
 
-<p th:text="${item}"/>
+<p th:text="${item}" />
 <!--
 <form action="#" th:action="@{/saveItem}" th:object=${item}" method="GET">
 
     <label>Item name:</label><input type="text" name="name" th:field="*{name}"><br><br>
 
+    <label>Item ID</label><input type="text" name="id" th:field="*{id}"><br><br>
     <label>Item Description:</label><input type="text" name="description" th:field="*{description}"><br><br>
     <label>Location:</label><input type="text" name="location" th:field="*{location}"><br><br>
-    <label>Assigned to:</label><input type="text" name="assigned_to" th:field="*{assigned_to}"><br><br>
-    <label>Status:</label><input type="text" name="status_id" th:field="*{status_id}"><br><br>
-    <label>Item ID</label><input type="text" name="id" th:field="*{id}"><br><br>
+    <label>Assigned to:</label><input type="text" name="assigned_to" th:field="*{assignedTo}"><br><br>
+    <label>Status:</label><input type="text" name="status_id" th:field="*{statusId}"><br><br>
+
 
     <button name="submit" type="submit" value="0">Submit</button>
 </form>
