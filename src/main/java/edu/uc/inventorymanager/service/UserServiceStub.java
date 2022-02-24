@@ -5,8 +5,12 @@ import org.springframework.stereotype.Component;
 
 import java.util.List;
 
+
+
 @Component
 public class UserServiceStub implements IUserService {
+    final String TEST_NAME = "Test Name";
+
     @Override
     public User save(User user) {
         return null;
@@ -20,8 +24,9 @@ public class UserServiceStub implements IUserService {
     @Override
     public User fetchUserById(int id) {
         User user = new User();
-        user.setUserName("Test Name");
+        user.setUserName(TEST_NAME);
         user.setId(id);
         return user;
     }
+
 }
