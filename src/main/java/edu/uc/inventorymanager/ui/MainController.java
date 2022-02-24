@@ -8,17 +8,14 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 
 @Controller
 public class MainController {
-    @Autowired
+   @Autowired
     IItemService itemService;
 
     /**
@@ -26,13 +23,21 @@ public class MainController {
      *
      * @return
      */
+    /*
+    @RequestMapping("/")
+    public String index() {return "index";}
+
+     */
+
     @RequestMapping("/")
     public String index(Model model) {
-        Item item = new Item(0, "item");
+        Item item = new Item();
         item.setDescription("Des");
         item.setLocation("locale");
         item.setAssignedTo(1);
         item.setStatusId(0);
+        item.setId(1);
+
         model.addAttribute(item);
         return "index";
     }
@@ -40,9 +45,18 @@ public class MainController {
 
     @RequestMapping("/saveItem")
     public String saveItem(Item item) {
-        //itemService.save(item);
+        try {
+            itemService.save(item);
+
+        } catch (Exception e){
+            e.printStackTrace();
+            return "index";
+        }
+       // itemService.save(item);
         return "index";
     }
+
+
 
     @GetMapping("/item")
     @ResponseBody
@@ -50,18 +64,22 @@ public class MainController {
         return itemService.fetchAll();
     }
 
-    /*
+
+
+
+
     @PostMapping(value ="/item", consumes="application/json", produces = "application/json")
     @ResponseBody
-    public Item createItem(@ResponseBody Item item){
+    public Item createItem(@RequestBody Item item){
         Item newItem = null;
         try {
-            //newItem = itemService.save(item);
+            newItem = itemService.save(item);
         } catch (Exception e){
             //
         }
+        return newItem;
     }
-     */
+
 
     /**
      * Fetch item with given ID
@@ -75,10 +93,12 @@ public class MainController {
      * @param id
      * @return
      */
+    /*
     @GetMapping("/item/{id}")
     public ResponseEntity fetchItemById(@PathVariable("id") String id) {
         return new ResponseEntity(HttpStatus.OK);
     }
+*/
 
     /**
      * Fetch user with given ID
@@ -92,8 +112,11 @@ public class MainController {
      * @param id
      * @return
      */
-    @GetMapping("/user/{id}")
-    public ResponseEntity fetchUserById(@PathVariable("id") String id) {
+    /*
+      @GetMapping("/user/{id}")
+      public ResponseEntity fetchUserById(@PathVariable("id") String id) {
         return new ResponseEntity(HttpStatus.OK);
     }
+    */
+
 }
