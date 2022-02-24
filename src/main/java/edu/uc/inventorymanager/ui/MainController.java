@@ -4,6 +4,8 @@ package edu.uc.inventorymanager.ui;
 import edu.uc.inventorymanager.dto.Item;
 import edu.uc.inventorymanager.service.IItemService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -32,12 +34,11 @@ public class MainController {
     public String index(Model model) {
         Item item = new Item();
         item.setName("name");
+        item.setId(1);
         item.setDescription("Des");
         item.setLocation("locale");
         item.setAssignedTo(1);
         item.setStatusId(0);
-        item.setId(1);
-
         model.addAttribute(item);
         return "index";
     }
@@ -50,6 +51,7 @@ public class MainController {
         } catch (Exception e){
             e.printStackTrace();
             return "index";
+           // return new ResponseEntity(HttpStatus.OK);
         }
        // itemService.save(item);
         return "index";
@@ -79,6 +81,7 @@ public class MainController {
             newItem = itemService.save(item);
         } catch (Exception e){
             //
+
         }
         return newItem;
     }

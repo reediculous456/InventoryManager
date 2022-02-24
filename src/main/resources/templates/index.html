@@ -1,5 +1,5 @@
 <!doctype html>
-<html xmlns:th="http://www/thymeleaf.org" lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -39,22 +39,20 @@
 
 <!--Dan's stufff-->
 
-<p th:text="${item}" />
-<!--
-<form action="#" th:action="@{/saveItem}" th:object=${item}" method="GET">
+<p th:text="${item}"></p>
 
-    <label>Item name:</label><input type="text" name="name" th:field="*{name}"><br><br>
+<form action="#" th:action="@{/saveItem}" th:object="${item}" method="GET">
 
-    <label>Item ID</label><input type="text" name="id" th:field="*{id}"><br><br>
-    <label>Item Description:</label><input type="text" name="description" th:field="*{description}"><br><br>
-    <label>Location:</label><input type="text" name="location" th:field="*{location}"><br><br>
-    <label>Assigned to:</label><input type="text" name="assigned_to" th:field="*{assignedTo}"><br><br>
-    <label>Status:</label><input type="text" name="status_id" th:field="*{statusId}"><br><br>
-
-
+    <label>Item name:</label><input type="text" name="name" th:field="*{name}"/>
+    <label>Item ID</label><input type="text" name="id" th:field="*{id}"/>
+    <label>Item Description:</label><input type="text" name="description" th:field="*{description}"/>
+    <label>Location:</label><input type="text" name="location" th:field="*{location}"/>
+    <label>Assigned to:</label><input type="text" name="assigned_to" th:field="*{assignedTo}"/>
+    <label>Status:</label><input type="text" name="status_id" th:field="*{statusId}"/>
     <button name="submit" type="submit" value="0">Submit</button>
 </form>
--->
+
+<button name="submit" type="submit" value="0">Submit</button>
 
 <!--End of Dan's stuff-->
 </body>

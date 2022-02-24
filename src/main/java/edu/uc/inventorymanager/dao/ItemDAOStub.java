@@ -21,26 +21,17 @@ public class ItemDAOStub implements IItemDAO {
         allItems.put(id, item);
         return item;
     }
-    //If breaks this was here:
-    /*
-    List<Item> allItems = new ArrayList<Item>();
-    @Override
-    public Item save(Item item) throws Exception {
-        allItems.add(item);
-        return item;
-    }
-     */
 
     @Override
     public List<Item> fetchAll() {
-        List<Item> returnItem = new ArrayList(allItems.values());
-        return (List<Item>) allItems;
+        List<Item> returnItems = new ArrayList(allItems.values());
+        return returnItems;
     }
 
 
     @Override
     public Item fetchById(int id) {
-        return null;
+        return allItems.get(id);
     }
 }
 //
