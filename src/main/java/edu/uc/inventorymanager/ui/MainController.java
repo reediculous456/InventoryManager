@@ -29,18 +29,18 @@ public class MainController {
     @RequestMapping("/")
     public String index(Model model) {
         Item item = new Item(0, "item");
-        item.setDescription("Des");
-        item.setLocation("locale");
-        item.setAssignedTo(1);
-        item.setStatusId(0);
+        //item.setDescription("Des");
+        //item.setLocation("locale");
+        //item.setAssignedTo(1);
+        //item.setStatusId(0);
         model.addAttribute(item);
         return "index";
     }
 
 
     @RequestMapping("/saveItem")
-    public String saveItem(Item item) {
-        //itemService.save(item);
+    public String saveItem(Item item) throws Exception {
+        itemService.save(item);
         return "index";
     }
 
