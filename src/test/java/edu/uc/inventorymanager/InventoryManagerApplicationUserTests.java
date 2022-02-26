@@ -34,7 +34,7 @@ public class InventoryManagerApplicationUserTests {
     }
 
     private void thenReturnUserForId5() {
-        String name = user.getName();
+        String name = user.getUserName();
         assertEquals("Test Name", name);
     }
 }

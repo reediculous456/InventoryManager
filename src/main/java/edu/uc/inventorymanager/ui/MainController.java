@@ -29,8 +29,8 @@ public class MainController {
     @RequestMapping("/")
     public String index(Model model) {
         Item item = new Item(0, "item");
-        item.setDescription("Des");
-        item.setLocation("locale");
+        item.setItemDescription("Des");
+        item.setItemLocation("locale");
         item.setAssignedTo(1);
         item.setStatusId(0);
         model.addAttribute(item);

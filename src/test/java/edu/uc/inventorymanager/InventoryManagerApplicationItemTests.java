@@ -34,7 +34,7 @@ class InventoryManagerApplicationItemTests {
     }
 
     private void thenReturnItemForId5() {
-        String description = item.getDescription();
+        String description = item.getItemDescription();
         assertEquals("Test Description", description);
     }
 }

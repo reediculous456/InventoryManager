@@ -47,6 +47,10 @@ The JSON object will look like this:
 
 This will allow our users to be able to get data about the object, and search for objects containing specific information.
 
+##Necessary Precautions For This Project
+
+* Within the Maven tab, install the Maven Dependencies (Source & Documentation)
+
 ## Scrum Roles
 
 * **Scrum Master, Product Owner, and Github Admin:** Wes Reed
