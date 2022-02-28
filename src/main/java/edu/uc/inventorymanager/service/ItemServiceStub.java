@@ -34,8 +34,8 @@ public class ItemServiceStub implements IItemService {
     }
 
     @Override
-    public Item fetchItemById(int id) {
-        Item item = new Item(id, "Test Description");
+    public Item fetchItemById(int itemId) {
+        Item item = new Item(itemId, "Test Description");
         return item;
     }
 }

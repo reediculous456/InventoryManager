@@ -6,8 +6,8 @@ import lombok.RequiredArgsConstructor;
 
 @RequiredArgsConstructor
 public @Data class Item {
-    @NonNull private int id;
-    private String name;
+    @NonNull private int itemId;
+    private String itemName;
     @NonNull private String description;
     private String location;
     private int assignedTo;

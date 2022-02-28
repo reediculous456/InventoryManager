@@ -18,10 +18,10 @@ public class UserServiceStub implements IUserService {
     }
 
     @Override
-    public User fetchUserById(int id) {
+    public User fetchUserById(int userId) {
         User user = new User();
-        user.setName("Test Name");
-        user.setId(id);
+        user.setUsername("Test Name");
+        user.setUserId(userId);
         return user;
     }
 }
