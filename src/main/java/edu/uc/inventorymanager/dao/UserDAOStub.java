@@ -1,6 +1,5 @@
 package edu.uc.inventorymanager.dao;
 
-import edu.uc.inventorymanager.dto.Item;
 import edu.uc.inventorymanager.dto.User;
 
 import java.util.ArrayList;
