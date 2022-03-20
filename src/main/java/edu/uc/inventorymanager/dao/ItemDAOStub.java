@@ -1,12 +1,13 @@
 package edu.uc.inventorymanager.dao;
 
 import edu.uc.inventorymanager.dto.Item;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
 import java.util.List;
 
-
+@Profile("test")
 @Repository
 public class ItemDAOStub implements IItemDAO {
 

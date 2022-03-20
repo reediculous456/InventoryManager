@@ -1,10 +1,14 @@
 package edu.uc.inventorymanager.dao;
 
 import edu.uc.inventorymanager.dto.User;
+import org.springframework.context.annotation.Profile;
+import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
 import java.util.List;
 
+@Profile("test")
+@Repository
 public class UserDAOStub implements IUserDAO {
     List<User> allUsers = new ArrayList<User>();
 
