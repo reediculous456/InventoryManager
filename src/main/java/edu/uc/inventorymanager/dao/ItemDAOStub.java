@@ -7,8 +7,8 @@ import org.springframework.stereotype.Repository;
 import java.util.ArrayList;
 import java.util.List;
 
-@Profile("test")
 @Repository
+@Profile("test")
 public class ItemDAOStub implements IItemDAO {
 
     List<Item> allItems = new ArrayList<Item>();

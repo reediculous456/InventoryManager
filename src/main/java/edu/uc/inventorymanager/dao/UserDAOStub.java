@@ -7,8 +7,8 @@ import org.springframework.stereotype.Repository;
 import java.util.ArrayList;
 import java.util.List;
 
-@Profile("test")
 @Repository
+@Profile("test")
 public class UserDAOStub implements IUserDAO {
     List<User> allUsers = new ArrayList<User>();
 
@@ -25,10 +25,7 @@ public class UserDAOStub implements IUserDAO {
 
     @Override
     public User fetchById(int id) {
-        return allUsers.stream()
-                .filter(user -> user.getId() == id)
-                .findAny()
-                .orElse(null);
+        return allUsers.stream().filter(user -> user.getId() == id).findAny().orElse(null);
     }
 
     @Override
