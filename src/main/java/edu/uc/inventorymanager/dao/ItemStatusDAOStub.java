@@ -1,10 +1,14 @@
 package edu.uc.inventorymanager.dao;
 
 import edu.uc.inventorymanager.dto.ItemStatus;
+import org.springframework.context.annotation.Profile;
+import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
 import java.util.List;
 
+@Profile("test")
+@Repository
 public class ItemStatusDAOStub implements IItemStatusDAO {
     List<ItemStatus> allItemStatuses = new ArrayList<ItemStatus>();
 
