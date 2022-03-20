@@ -8,8 +8,8 @@ import org.springframework.stereotype.Repository;
 import java.util.ArrayList;
 import java.util.List;
 
-@Profile("dev")
 @Repository
+@Profile("dev")
 public class UserSQLDAO implements IUserDAO {
     @Autowired
     UserRepository userRepository;

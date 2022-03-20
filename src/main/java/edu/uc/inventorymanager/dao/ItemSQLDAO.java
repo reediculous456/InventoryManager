@@ -8,8 +8,8 @@ import org.springframework.stereotype.Repository;
 import java.util.ArrayList;
 import java.util.List;
 
-@Profile("dev")
 @Repository
+@Profile("dev")
 public class ItemSQLDAO implements IItemDAO {
     @Autowired
     ItemRepository itemRepository;
