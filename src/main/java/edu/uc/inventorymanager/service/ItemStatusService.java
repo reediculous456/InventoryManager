@@ -13,6 +13,13 @@ public class ItemStatusService implements IItemStatusService {
     @Autowired
     private IItemStatusDAO itemStatusDAO;
 
+    public ItemStatusService() {
+    }
+
+    public ItemStatusService(IItemStatusDAO itemStatusDAO) {
+        this.itemStatusDAO = itemStatusDAO;
+    }
+
     @Override
     public ItemStatus save(ItemStatus itemStatus) throws Exception {
         return itemStatusDAO.save(itemStatus);

@@ -17,6 +17,10 @@ public class ItemService implements IItemService {
     public ItemService() {
     }
 
+    public ItemService(IItemDAO itemDAO) {
+        this.itemDAO = itemDAO;
+    }
+
     @Override
     public Item save(Item item) throws Exception {
         return itemDAO.save(item);

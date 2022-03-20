@@ -13,6 +13,13 @@ public class UserService implements IUserService {
     @Autowired
     private IUserDAO userDAO;
 
+    public UserService() {
+    }
+
+    public UserService(IUserDAO userDAO) {
+        this.userDAO = userDAO;
+    }
+
     @Override
     public User save(User user) throws Exception {
         return userDAO.save(user);
