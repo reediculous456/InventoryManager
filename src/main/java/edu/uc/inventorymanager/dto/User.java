@@ -1,5 +1,6 @@
 package edu.uc.inventorymanager.dto;
 
+import com.google.gson.annotations.SerializedName;
 import lombok.Data;
 
 public @Data class User {
