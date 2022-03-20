@@ -9,13 +9,12 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class ItemServiceStub implements IItemService {
+public class ItemService implements IItemService {
 
     @Autowired
     private IItemDAO itemDAO;
 
-    public ItemServiceStub() {
-
+    public ItemService() {
     }
 
     @Override
@@ -35,7 +34,6 @@ public class ItemServiceStub implements IItemService {
 
     @Override
     public Item fetchItemById(int id) {
-        Item item = new Item(id, "Test Description");
-        return item;
+        return itemDAO.fetchById(id);
     }
 }

@@ -25,6 +25,15 @@ public class ItemDAOStub implements IItemDAO {
 
     @Override
     public Item fetchById(int id) {
-        return null;
+        return allItems.stream()
+                .filter(item -> item.getId() == id)
+                .findAny()
+                .orElse(null);
+    }
+
+    @Override
+    public void deleteById(int id) {
+        Item item = this.fetchById(id);
+        allItems.remove(item);
     }
 }

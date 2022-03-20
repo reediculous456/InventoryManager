@@ -11,4 +11,6 @@ public interface IItemDAO {
     List<Item> fetchAll();
 
     Item fetchById(int id);
+
+    void deleteById(int id);
 }

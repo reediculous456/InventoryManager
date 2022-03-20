@@ -8,4 +8,8 @@ public interface IUserDAO {
     User save(User user) throws Exception;
 
     List<User> fetchAll();
+
+    User fetchById(int id);
+
+    void deleteById(int id);
 }
