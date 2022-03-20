@@ -5,12 +5,10 @@ import lombok.Data;
 
 public @Data class User {
 
-    @SerializedName("name")
-    private String name;
-    @SerializedName("location")
-    private String location;
-    @SerializedName("email")
-    private String email;
-    @SerializedName("cell")
-    private Integer id;
+    @SerializedName("id")
+    private String id;
+    @SerializedName("firstname")
+    private String firstname;
+    @SerializedName("surname")
+    private String surname;
 }
