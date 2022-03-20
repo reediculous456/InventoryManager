@@ -8,8 +8,10 @@ import edu.uc.inventorymanager.dto.ItemStatus;
 import edu.uc.inventorymanager.dto.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Component;
 
+@Profile("!test")
 @Component
 public class DatabaseSeed implements CommandLineRunner {
     @Autowired
