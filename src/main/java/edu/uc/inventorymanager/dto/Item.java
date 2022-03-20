@@ -1,15 +1,51 @@
 package edu.uc.inventorymanager.dto;
 
-import lombok.Data;
-import lombok.NonNull;
-import lombok.RequiredArgsConstructor;
+import lombok.*;
+import org.hibernate.Hibernate;
 
+import javax.persistence.*;
+import java.util.Objects;
+
+@Getter
+@Setter
+@ToString
+@Entity
+@AllArgsConstructor
 @RequiredArgsConstructor
-public @Data class Item {
-    @NonNull private int id;
+@NoArgsConstructor
+public class Item {
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(nullable = false)
+    private int id;
+
+    @Column(nullable = false)
+    @NonNull
     private String name;
-    @NonNull private String description;
+
+    @NonNull
+    private String description;
+
     private String location;
-    private int assignedTo;
-    private int statusId;
+
+    @ManyToOne
+    @JoinColumn(name = "assignedTo")
+    private User assignee;
+
+    @ManyToOne
+    @JoinColumn(name = "statusId")
+    private ItemStatus status;
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || Hibernate.getClass(this) != Hibernate.getClass(o)) return false;
+        Item item = (Item) o;
+        return Objects.equals(id, item.id);
+    }
+
+    @Override
+    public int hashCode() {
+        return getClass().hashCode();
+    }
 }

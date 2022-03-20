@@ -2,6 +2,8 @@ package edu.uc.inventorymanager.ui;
 
 
 import edu.uc.inventorymanager.dto.Item;
+import edu.uc.inventorymanager.dto.ItemStatus;
+import edu.uc.inventorymanager.dto.User;
 import edu.uc.inventorymanager.service.IItemService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -28,16 +30,13 @@ public class MainController {
      */
     @RequestMapping("/")
     public String index(Model model) {
-        Item item = new Item(0, "item");
-        //item.setDescription("Des");
-        //item.setLocation("locale");
-        //item.setAssignedTo(1);
-        //item.setStatusId(0);
+        Item item = new Item("item", "Des");
+        item.setLocation("locale");
+        item.setAssignee(new User("John Doe"));
+        item.setStatus(new ItemStatus("Assigned"));
         model.addAttribute(item);
         return "index";
     }
-    //
-
 
     @RequestMapping("/saveItem")
     public String saveItem(Item item) throws Exception {
