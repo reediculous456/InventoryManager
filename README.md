@@ -8,6 +8,14 @@ Wes Reed, Matthew Saling, Daniel Cullen, and Christopher Elbe
 
 Inventory Manager is an application for tracking your companies assets. This includes how many of each asset your company has and which employee has possession of each item.
 
+## Installation
+
+1. Install [IntelliJ IDEA](https://www.jetbrains.com/idea)
+2. Install [Docker Desktop](https://www.docker.com/products/docker-desktop)
+3. Clone this project and open the folder in IntelliJ IDEA
+4. Run `docker-compose up -d` in the project directory to start MySQL and phpMyAdmin
+5. Run the project in IntelliJ IDEA
+
 ## Storyboard
 
 [Link to Storyboard](https://projects.invisionapp.com/prototype/ckz1n0yp4001nz50197yyo2fc/play)
