@@ -2,12 +2,14 @@ package edu.uc.inventorymanager.dao;
 
 import edu.uc.inventorymanager.dto.ItemStatus;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
 import java.util.List;
 
-@Repository("itemStatusDAO")
+@Profile("dev")
+@Repository
 public class ItemStatusSQLDAO implements IItemStatusDAO {
     @Autowired
     ItemStatusRepository itemStatusRepository;

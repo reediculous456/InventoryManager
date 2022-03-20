@@ -2,12 +2,14 @@ package edu.uc.inventorymanager.dao;
 
 import edu.uc.inventorymanager.dto.Item;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
 import java.util.List;
 
-@Repository("itemDAO")
+@Profile("dev")
+@Repository
 public class ItemSQLDAO implements IItemDAO {
     @Autowired
     ItemRepository itemRepository;
