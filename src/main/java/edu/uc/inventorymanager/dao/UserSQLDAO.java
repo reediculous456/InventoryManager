@@ -1,6 +1,7 @@
 package edu.uc.inventorymanager.dao;
 
 import edu.uc.inventorymanager.dto.User;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Repository;
 
@@ -8,29 +9,33 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Repository
-@Profile("test")
-public class UserDAOStub implements IUserDAO {
-    List<User> allUsers = new ArrayList<User>();
+@Profile("dev")
+public class UserSQLDAO implements IUserDAO {
+    @Autowired
+    UserRepository userRepository;
 
     @Override
     public User save(User user) throws Exception {
-        allUsers.add(user);
-        return user;
+        return userRepository.save(user);
     }
 
     @Override
     public List<User> fetchAll() {
+        List<User> allUsers = new ArrayList<>();
+        Iterable<User> users = userRepository.findAll();
+        for (User user : users) {
+            allUsers.add(user);
+        }
         return allUsers;
     }
 
     @Override
     public User fetchById(int id) {
-        return allUsers.stream().filter(user -> user.getId() == id).findAny().orElse(null);
+        return userRepository.findById(id).get();
     }
 
     @Override
     public void deleteById(int id) {
-        User user = this.fetchById(id);
-        allUsers.remove(user);
+        userRepository.deleteById(id);
     }
 }
