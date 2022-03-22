@@ -58,13 +58,17 @@ public class MainController {
      * <p>
      * Returns one of the following status codes:
      * 200: item found
-     * 400: item not found
+     * 404: item not found
      *
      * @param id
      * @return
      */
     @GetMapping("/item/{id}")
     public ResponseEntity fetchItemById(@PathVariable("id") int id) {
+        var item = itemService.fetchItemById(id);
+        if (item == null) {
+            return new ResponseEntity(HttpStatus.NOT_FOUND);
+        }
         return new ResponseEntity(HttpStatus.OK);
     }
 
