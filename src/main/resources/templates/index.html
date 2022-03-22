@@ -20,14 +20,18 @@
         }
     </style>
 
-
+    <script type="text/javascript">
+    $(function(){
+        $("#Item_Name").autocomplete({
+            source: ["Laptop", "Mouse Pad", "Monitor"],
+            minLength: 2
+        });
+    });
+    </script>
 </head>
 <body>
 
 <nav th:replace="fragments/navigation :: navbar"></nav>
-
-
-
 
 <main class="container">
     <div class="row">
@@ -45,17 +49,17 @@
 <p th:text="${item}" />
 <form action="#" th:action="@{/saveItem}" th:object="${item}" method="GET">
     <label>Item name:</label>
-    <input type="text" name="name" th:field="*{name}"/><br><br>
+    <input id = "Item_name" type="text" name="name" th:field="*{name}"/><br><br>
     <label>Item Description:</label>
-    <input type="text" name="description" th:field="*{description}"/><br><br>
+    <input id =Item_Description" type="text" name="description" th:field="*{description}"/><br><br>
     <label>Location:</label>
-    <input type="text" name="location" th:field="*{location}"/><br><br>
-    <label>Location:</label>
-    <input type="text" name="assigned_to" th:field="*{assignedTo}"/><br><br>
-    <label>Location:</label>
-    <input type="text" name="status_id" th:field="*{statusId}"/><br><br>
+    <input id ="Item_Location" type="text" name="location" th:field="*{location}"/><br><br>
+    <label>Assigned to:</label>
+    <input id ="Item_Assigned_To" type="text" name="assigned_to" th:field="*{assignedTo}"/><br><br>
+    <label>Item Status:</label>
+    <input id ="Item_Status" type="text" name="status_id" th:field="*{statusId}"/><br><br>
     <label>Item ID</label>
-    <input type="text" name="id" th:field="*{id}"/><br><br>
+    <input id ="Item_ID" type="text" name="id" th:field="*{id}"/><br><br>
     <button name="submit" type="submit" value="0">Submit</button>
 </form>
 

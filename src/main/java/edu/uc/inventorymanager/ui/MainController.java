@@ -51,18 +51,6 @@ public class MainController {
         return itemService.fetchAll();
     }
 
-    /*
-    @PostMapping(value ="/item", consumes="application/json", produces = "application/json")
-    @ResponseBody
-    public Item createItem(@ResponseBody Item item){
-        Item newItem = null;
-        try {
-            //newItem = itemService.save(item);
-        } catch (Exception e){
-            //
-        }
-    }
-     */
 
     /**
      * Fetch item with given ID
