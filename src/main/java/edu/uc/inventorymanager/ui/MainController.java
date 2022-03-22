@@ -68,8 +68,7 @@ public class MainController {
         var item = itemService.fetchItemById(id);
         if (item == null) {
             return new ResponseEntity(HttpStatus.NOT_FOUND);
-        }
-        return new ResponseEntity(HttpStatus.OK);
+        } else return new ResponseEntity(HttpStatus.OK);
     }
 
     /**
