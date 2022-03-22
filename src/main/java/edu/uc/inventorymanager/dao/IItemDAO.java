@@ -1,15 +1,16 @@
-package edu.uc.inventorymanager.service;
+package edu.uc.inventorymanager.dao;
 
 import edu.uc.inventorymanager.dto.Item;
 
 import java.util.List;
 
-public interface IItemService {
+
+public interface IItemDAO {
     Item save(Item item) throws Exception;
 
     List<Item> fetchAll();
 
-    Item assign(int userId);
+    Item fetchById(int id);
 
-    Item fetchItemById(int id);
+    void deleteById(int id);
 }
