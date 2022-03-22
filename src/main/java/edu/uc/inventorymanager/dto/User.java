@@ -7,8 +7,8 @@ public @Data class User {
 
     @SerializedName("id")
     private String id;
-    @SerializedName("firstname")
-    private String firstname;
-    @SerializedName("surname")
-    private String surname;
+    @SerializedName("first_name")
+    private String firstName;
+    @SerializedName("last_name")
+    private String lastName;
 }
