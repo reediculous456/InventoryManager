@@ -26,6 +26,38 @@
             source: ["Laptop", "Mouse Pad", "Monitor"],
             minLength: 2
         });
+        $("#Item_Description").autocomplete({
+            source: ["Black", "Touchscreen", "256 gb"],
+            minLength: 2
+
+        });
+        $("#Item_Assigned_To").autocomplete({
+            source: ["Tom", "Gregg", "Sally"],
+            minLength: 2
+
+        });
+        $("#Item_Status").autocomplete({
+            source: ["Missing", "In-Stock", "Out-of-stock"],
+            minLength: 2
+
+        });
+        $("#Item_Assigned_To").autocomplete({
+            source: ["Tom", "Gregg", "Sally"],
+            minLength: 2
+
+        });
+        $("#Item_ID").autocomplete({
+            source: ["001", "002", "003"],
+            minLength: 2
+
+        });
+
+
+    $(function(){
+        $("#Item_Location").autocomplete({
+            source: ["Ohio", "Maine", "Kentucky"],
+            minLength: 2
+        });
     });
     </script>
 </head>
@@ -51,15 +83,15 @@
     <label>Item name:</label>
     <input id = "Item_name" type="text" name="name" th:field="*{name}"/><br><br>
     <label>Item Description:</label>
-    <input id =Item_Description" type="text" name="description" th:field="*{description}"/><br><br>
-    <label>Location:</label>
-    <input id ="Item_Location" type="text" name="location" th:field="*{location}"/><br><br>
-    <label>Assigned to:</label>
-    <input id ="Item_Assigned_To" type="text" name="assigned_to" th:field="*{assignedTo}"/><br><br>
-    <label>Item Status:</label>
-    <input id ="Item_Status" type="text" name="status_id" th:field="*{statusId}"/><br><br>
-    <label>Item ID</label>
-    <input id ="Item_ID" type="text" name="id" th:field="*{id}"/><br><br>
+    <input id ="Item_Description" type="text" name="description" th:field="*{description}"/><br><br>
+     <label>Location:</label>
+     <input id ="Item_Location" type="text" name="location" th:field="*{location}"/><br><br>
+     <label>Assigned to:</label>
+     <input id ="Item_Assigned_To" type="text" name="assigned_to" th:field="*{assignedTo}"/><br><br>
+     <label>Item Status:</label>
+     <input id ="Item_Status" type="text" name="status_id" th:field="*{statusId}"/><br><br>
+     <label>Item ID</label>
+     <input id ="Item_ID" type="text" name="id" th:field="*{id}"/><br><br>
     <button name="submit" type="submit" value="0">Submit</button>
 </form>
 
