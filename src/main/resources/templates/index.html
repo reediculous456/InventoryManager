@@ -42,7 +42,8 @@
                 </div>
                 <div class="mb-3">
                     <label for="item-description" class="form-label">Item Description:</label>
-                    <input id="item-description" class="form-control" type="text" name="description" th:field="*{description}"/>
+                    <input id="item-description" class="form-control" type="text" name="description"
+                           th:field="*{description}"/>
                 </div>
                 <div class="mb-3">
                     <label for="item-location" class="form-label">Location:</label>
@@ -50,7 +51,8 @@
                 </div>
                 <div class="mb-3">
                     <label for="item-assigned-to" class="form-label">Assigned to:</label>
-                    <input id="item-assigned-to" class="form-control" type="text" name="assigned-to" th:field="*{assignee}"/>
+                    <input id="item-assigned-to" class="form-control" type="text" name="assigned-to"
+                           th:field="*{assignee}"/>
                 </div>
                 <div class="mb-3">
                     <label for="item-status" class="form-label">Item Status:</label>
@@ -60,36 +62,35 @@
             </form>
         </div>
     </div>
-    <div class="row">
-      <div class="col">
-        <table style="border: 1px solid; padding: 10px; text-align: center; margin-left: 20px">
-          <tr style="border-bottom: 1px solid">
-              <th style="border-right: solid 1px; padding: 10px">ID</th>
-              <th style="border-right: solid 1px; padding: 10px">Name</th>
-              <th style="border-right: solid 1px; padding: 10px">Description</th>
-              <th style="border-right: solid 1px; padding: 10px">Location</th>
-              <th style="border-right: solid 1px; padding: 10px">Assigned To</th>
-              <th style="border-right: solid 1px; padding: 10px">Stock Status</th>
-          </tr>
-
-          <tr style="border: 1px solid">
-              <Td style="border-right: solid 1px; padding: 10px" th:field="*{id}">1</Td>
-              <td style="border-right: solid 1px; padding: 10px" th:field="*{name}">Item</td>
-              <td style="border-right: solid 1px; padding: 10px" th:field="*{description}">This is an item</td>
-              <td style="border-right: solid 1px; padding: 10px" th:field="*{location}">Shelf 1</td>
-              <td style="border-right: solid 1px; padding: 10px" th:field="*{assignedTo}">Chris</td>
-              <td style="border-right: solid 1px; padding: 10px" th:field="*{statusId}">In Stock</td>
-          </tr>
-          <tr style="border: 1px solid">
-              <Td style="border-right: solid 1px; padding: 10px" th:field="*{id}">2</Td>
-              <td style="border-right: solid 1px; padding: 10px" th:field="*{name}">Item</td>
-              <td style="border-right: solid 1px; padding: 10px" th:field="*{description}">This is an item</td>
-              <td style="border-right: solid 1px; padding: 10px" th:field="*{location}">Shelf 2</td>
-              <td style="border-right: solid 1px; padding: 10px" th:field="*{assignedTo}">Chris</td>
-              <td style="border-right: solid 1px; padding: 10px" th:field="*{statusId}">In Stock</td>
-          </tr>
-      </table>
-      </div>
+    <div class="row mt-3">
+        <div class="col">
+            <table class="table table-striped table-bordered">
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Description</th>
+                    <th>Location</th>
+                    <th>Assigned To</th>
+                    <th>Stock Status</th>
+                </tr>
+                <tr>
+                    <td th:field="*{id}">1</td>
+                    <td th:field="*{name}">Item</td>
+                    <td th:field="*{description}">This is an item</td>
+                    <td th:field="*{location}">Shelf 1</td>
+                    <td th:field="*{assignedTo}">Chris</td>
+                    <td th:field="*{statusId}">In Stock</td>
+                </tr>
+                <tr>
+                    <td th:field="*{id}">2</td>
+                    <td th:field="*{name}">Item</td>
+                    <td th:field="*{description}">This is an item</td>
+                    <td th:field="*{location}">Shelf 2</td>
+                    <td th:field="*{assignedTo}">Chris</td>
+                    <td th:field="*{statusId}">In Stock</td>
+                </tr>
+            </table>
+        </div>
     </div>
 </main>
 
