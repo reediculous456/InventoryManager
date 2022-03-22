@@ -64,7 +64,7 @@ public class MainController {
      * @return
      */
     @GetMapping("/item/{id}")
-    public ResponseEntity fetchItemById(@PathVariable("id") String id) {
+    public ResponseEntity fetchItemById(@PathVariable("id") int id) {
         return new ResponseEntity(HttpStatus.OK);
     }
 
@@ -81,7 +81,7 @@ public class MainController {
      * @return
      */
     @GetMapping("/user/{id}")
-    public ResponseEntity fetchUserById(@PathVariable("id") String id) {
+    public ResponseEntity fetchUserById(@PathVariable("id") int id) {
         return new ResponseEntity(HttpStatus.OK);
     }
 }
