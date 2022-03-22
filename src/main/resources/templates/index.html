@@ -41,21 +41,22 @@
             <th style="border-right: solid 1px; padding: 10px">Assigned To</th>
             <th style="border-right: solid 1px; padding: 10px">Stock Status</th>
         </tr>
+        
         <tr style="border: 1px solid">
-            <Td style="border-right: solid 1px; padding: 10px">1</Td>
-            <td style="border-right: solid 1px; padding: 10px">Item</td>
-            <td style="border-right: solid 1px; padding: 10px">This is an item</td>
-            <td style="border-right: solid 1px; padding: 10px">Shelf 1</td>
-            <td style="border-right: solid 1px; padding: 10px">Chris</td>
-            <td style="border-right: solid 1px; padding: 10px">In Stock</td>
+            <Td style="border-right: solid 1px; padding: 10px" th:field="*{id}">1</Td>
+            <td style="border-right: solid 1px; padding: 10px" th:field="*{name}">Item</td>
+            <td style="border-right: solid 1px; padding: 10px" th:field="*{description}">This is an item</td>
+            <td style="border-right: solid 1px; padding: 10px" th:field="*{location}">Shelf 1</td>
+            <td style="border-right: solid 1px; padding: 10px" th:field="*{assignedTo}">Chris</td>
+            <td style="border-right: solid 1px; padding: 10px" th:field="*{statusId}">In Stock</td>
         </tr>
         <tr style="border: 1px solid">
-            <Td style="border-right: solid 1px; padding: 10px">2</Td>
-            <td style="border-right: solid 1px; padding: 10px">Item</td>
-            <td style="border-right: solid 1px; padding: 10px">This is an item</td>
-            <td style="border-right: solid 1px; padding: 10px">Shelf 2</td>
-            <td style="border-right: solid 1px; padding: 10px">Chris</td>
-            <td style="border-right: solid 1px; padding: 10px">In Stock</td>
+            <Td style="border-right: solid 1px; padding: 10px" th:field="*{id}">2</Td>
+            <td style="border-right: solid 1px; padding: 10px" th:field="*{name}">Item</td>
+            <td style="border-right: solid 1px; padding: 10px" th:field="*{description}">This is an item</td>
+            <td style="border-right: solid 1px; padding: 10px" th:field="*{location}">Shelf 2</td>
+            <td style="border-right: solid 1px; padding: 10px" th:field="*{assignedTo}">Chris</td>
+            <td style="border-right: solid 1px; padding: 10px" th:field="*{statusId}">In Stock</td>
         </tr>
     </table>
     <!--End of Chris's Stuff-->
