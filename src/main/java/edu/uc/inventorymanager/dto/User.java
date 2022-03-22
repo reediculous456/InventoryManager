@@ -6,7 +6,7 @@ import lombok.Data;
 public @Data class User {
 
     @SerializedName("id")
-    private String id;
+    private Integer id;
     @SerializedName("first_name")
     private String firstName;
     @SerializedName("last_name")
