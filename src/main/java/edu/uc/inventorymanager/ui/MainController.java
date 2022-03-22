@@ -5,6 +5,7 @@ import edu.uc.inventorymanager.dto.Item;
 import edu.uc.inventorymanager.dto.ItemStatus;
 import edu.uc.inventorymanager.dto.User;
 import edu.uc.inventorymanager.service.IItemService;
+import edu.uc.inventorymanager.service.IUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -22,6 +23,7 @@ import java.util.List;
 public class MainController {
     @Autowired
     IItemService itemService;
+    IUserService userService;
 
     /**
      * Handle the / endpoint
@@ -74,17 +76,20 @@ public class MainController {
     /**
      * Fetch user with given ID
      * <p>
-     * Given the parameter id, find an user that corresponds to this unique id.
+     * Given the parameter id, find a user that corresponds to this unique id.
      * <p>
      * Returns one of the following status codes:
      * 200: user found
-     * 400: user not found
+     * 404: user not found
      *
      * @param id
      * @return
      */
     @GetMapping("/user/{id}")
     public ResponseEntity fetchUserById(@PathVariable("id") int id) {
-        return new ResponseEntity(HttpStatus.OK);
+        var user = userService.fetchUserById(id);
+        if (user == null) {
+            return new ResponseEntity(HttpStatus.NOT_FOUND);
+        } else return new ResponseEntity(HttpStatus.OK);
     }
 }
