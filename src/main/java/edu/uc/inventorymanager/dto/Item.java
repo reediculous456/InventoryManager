@@ -5,6 +5,7 @@ import org.hibernate.Hibernate;
 
 import javax.persistence.*;
 import java.util.Objects;
+import com.google.gson.annotations.SerializedName;
 
 @Getter
 @Setter
@@ -17,15 +18,19 @@ public class Item {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(nullable = false)
+    @SerializedName("id")
     private int id;
 
     @Column(nullable = false)
     @NonNull
+    @SerializedName("name")
     private String name;
 
     @NonNull
+    @SerializedName("description")
     private String description;
 
+    @SerializedName("location")
     private String location;
 
     @ManyToOne
