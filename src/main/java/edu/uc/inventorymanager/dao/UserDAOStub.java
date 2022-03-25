@@ -23,6 +23,7 @@ public class UserDAOStub implements IUserDAO {
         return allUsers;
     }
 
+    @Override
     public User fetchById(int id) {
         return allUsers.stream().filter(user -> user.getId() == id).findAny().orElse(null);
     }
