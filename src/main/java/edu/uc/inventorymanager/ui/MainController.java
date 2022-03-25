@@ -5,7 +5,6 @@ import edu.uc.inventorymanager.dto.Item;
 import edu.uc.inventorymanager.dto.ItemStatus;
 import edu.uc.inventorymanager.dto.User;
 import edu.uc.inventorymanager.service.IItemService;
-import edu.uc.inventorymanager.service.IUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
