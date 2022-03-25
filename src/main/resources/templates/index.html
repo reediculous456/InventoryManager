@@ -64,7 +64,8 @@
     </div>
     <div class="row mt-3">
         <div class="col">
-            <table class="table table-striped table-bordered">
+            <table class="table table-striped table-bordered" >
+                <thead>
                 <tr>
                     <th>ID</th>
                     <th>Name</th>
@@ -73,22 +74,16 @@
                     <th>Assigned To</th>
                     <th>Stock Status</th>
                 </tr>
-                <tr>
-                    <td th:field="*{id}">1</td>
-                    <td th:field="*{name}">Item</td>
-                    <td th:field="*{description}">This is an item</td>
-                    <td th:field="*{location}">Shelf 1</td>
-                    <td th:field="*{assignedTo}">Chris</td>
-                    <td th:field="*{statusId}">In Stock</td>
+                </thead>
+                <tbody>
+                <tr th:each="${item}">
+                    <td th:text="${item.id}"></td>
+                    <td th:text="${item.name}"></td>
+                    <td th:text="${item.description}"></td>
+                    <td th:text="${item.assignee}"></td>
+                    <td th:text="${item.status}"></td>
                 </tr>
-                <tr>
-                    <td th:field="*{id}">2</td>
-                    <td th:field="*{name}">Item</td>
-                    <td th:field="*{description}">This is an item</td>
-                    <td th:field="*{location}">Shelf 2</td>
-                    <td th:field="*{assignedTo}">Chris</td>
-                    <td th:field="*{statusId}">In Stock</td>
-                </tr>
+                </tbody>
             </table>
         </div>
     </div>
