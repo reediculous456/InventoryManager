@@ -34,8 +34,7 @@
 <main class="container">
     <div class="row">
         <div class="col">
-            <p th:text="${item}"/>
-            <form action="#" th:action="@{/saveItem}" th:object="${item}" method="GET">
+            <form action="#" th:action="@{/saveItem}" th:object="${newItem}" method="GET">
                 <div class="mb-3">
                     <label for="item-name" class="form-label">Item name:</label>
                     <input id="item-name" class="form-control" type="text" name="name" th:field="*{name}"/>
@@ -64,7 +63,7 @@
     </div>
     <div class="row mt-3">
         <div class="col">
-            <table class="table table-striped table-bordered" >
+            <table class="table table-striped table-bordered">
                 <thead>
                 <tr>
                     <th>ID</th>
@@ -76,12 +75,13 @@
                 </tr>
                 </thead>
                 <tbody>
-                <tr th:each="${item}">
-                    <td th:text="${item.id}"></td>
-                    <td th:text="${item.name}"></td>
-                    <td th:text="${item.description}"></td>
-                    <td th:text="${item.assignee}"></td>
-                    <td th:text="${item.status}"></td>
+                <tr th:each="item: ${items}">
+                    <td th:text="${item.id != null} ? ${item.id} : 'N/A'"></td>
+                    <td th:text="${item.name != null} ? ${item.name} : 'N/A'"></td>
+                    <td th:text="${item.description != null} ? ${item.description} : 'N/A'"></td>
+                    <td th:text="${item.location != null} ? ${item.location} : 'N/A'"></td>
+                    <td th:text="${item.assignee != null} ? ${item.assignee} : 'N/A'"></td>
+                    <td th:text="${item.status != null} ? ${item.status} : 'N/A'"></td>
                 </tr>
                 </tbody>
             </table>

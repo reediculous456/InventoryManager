@@ -29,11 +29,13 @@ public class MainController {
      */
     @RequestMapping("/")
     public String index(Model model) {
-        Item item = new Item("item", "Des");
-        item.setLocation("locale");
-        item.setAssignee(new User("John Doe"));
-        item.setStatus(new ItemStatus("Assigned"));
-        model.addAttribute(item);
+        Item newItem = new Item();
+        newItem.setLocation("locale");
+        newItem.setAssignee(new User("John Doe"));
+        newItem.setStatus(new ItemStatus("Assigned"));
+        model.addAttribute("newItem", newItem);
+        List<Item> items = itemService.fetchAll();
+        model.addAttribute("items", items);
         return "index";
     }
 
