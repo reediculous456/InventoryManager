@@ -47,57 +47,11 @@ public class MainController {
         return "index";
     }
 
-    @GetMapping("/item")
+    @GetMapping("/items")
     @ResponseBody
     public List<Item> fetchAllItems() {
+        HttpHeaders headers = new HttpHeaders();
+        headers.setContentType(MediaType.APPLICATION_JSON);
         return itemService.fetchAll();
-    }
-
-
-    /**
-     * Fetch item with given ID
-     * <p>
-     * Given the parameter id, find an item that corresponds to this unique id.
-     * <p>
-     * Returns one of the following status codes:
-     * 200: item found
-     * 400: item not found
-     *
-     * @param id
-     * @return
-     */
-    @GetMapping("/item/{id}")
-    public ResponseEntity fetchItemById(@PathVariable("id") String id) {
-        return new ResponseEntity(HttpStatus.OK);
-    }
-
-    /**
-     * Fetch user with given ID
-     * <p>
-     * Given the parameter id, find an user that corresponds to this unique id.
-     * <p>
-     * Returns one of the following status codes:
-     * 200: user found
-     * 400: user not found
-     *
-     * @param id
-     * @return
-     */
-    @GetMapping("/user/{id}")
-    public ResponseEntity fetchUserById(@PathVariable("id") String id) {
-        return new ResponseEntity(HttpStatus.OK);
-    }
-
-    @GetMapping("/Users")
-    public ResponseEntity searchUsers(@RequestParam(value="searchTerm", required = false, defaultValue = "None") String searchTerm){
-        try {
-            List<User> users = userService.fetchUsers(searchTerm);
-            HttpHeaders headers = new HttpHeaders();
-            headers.setContentType(MediaType.APPLICATION_JSON);
-            return new ResponseEntity(users, headers, HttpStatus.OK);
-        } catch (IOException e) {
-            e.printStackTrace();
-            return new ResponseEntity(HttpStatus.INTERNAL_SERVER_ERROR);
-        }
     }
 }

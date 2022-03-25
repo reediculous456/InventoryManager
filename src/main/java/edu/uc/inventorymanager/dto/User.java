@@ -1,6 +1,5 @@
 package edu.uc.inventorymanager.dto;
 
-import com.google.gson.annotations.SerializedName;
 import lombok.*;
 import org.hibernate.Hibernate;
 
@@ -17,12 +16,10 @@ import java.util.Objects;
 @RequiredArgsConstructor
 @NoArgsConstructor
 public class User {
-    @SerializedName("id")
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @SerializedName("name")
     @NonNull
     private String name;
 

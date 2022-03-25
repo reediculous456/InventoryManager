@@ -11,6 +11,4 @@ public interface IUserService {
     List<User> fetchALl();
 
     User fetchUserById(int id);
-
-    List<User> fetchUsers(String id) throws IOException;
 }
