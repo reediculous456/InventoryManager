@@ -2,6 +2,7 @@ package edu.uc.inventorymanager.ui;
 
 
 import edu.uc.inventorymanager.dto.Item;
+import edu.uc.inventorymanager.dto.ItemStatus;
 import edu.uc.inventorymanager.dto.User;
 import edu.uc.inventorymanager.service.IItemService;
 import edu.uc.inventorymanager.service.IUserService;
@@ -32,19 +33,17 @@ public class MainController {
      */
     @RequestMapping("/")
     public String index(Model model) {
-        Item item = new Item(0, "item");
-        item.setDescription("Des");
+        Item item = new Item("item", "Des");
         item.setLocation("locale");
-        item.setAssignedTo(1);
-        item.setStatusId(0);
+        item.setAssignee(new User("John Doe"));
+        item.setStatus(new ItemStatus("Assigned"));
         model.addAttribute(item);
         return "index";
     }
 
-
     @RequestMapping("/saveItem")
-    public String saveItem(Item item) {
-        //itemService.save(item);
+    public String saveItem(Item item) throws Exception {
+        itemService.save(item);
         return "index";
     }
 
@@ -54,18 +53,6 @@ public class MainController {
         return itemService.fetchAll();
     }
 
-    /*
-    @PostMapping(value ="/item", consumes="application/json", produces = "application/json")
-    @ResponseBody
-    public Item createItem(@ResponseBody Item item){
-        Item newItem = null;
-        try {
-            //newItem = itemService.save(item);
-        } catch (Exception e){
-            //
-        }
-    }
-     */
 
     /**
      * Fetch item with given ID

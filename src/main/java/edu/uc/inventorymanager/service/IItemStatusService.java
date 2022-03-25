@@ -6,7 +6,7 @@ import java.util.List;
 
 public interface IItemStatusService {
 
-    void save(ItemStatus itemStatus);
+    ItemStatus save(ItemStatus itemStatus) throws Exception;
 
     List<ItemStatus> fetchALl();
 

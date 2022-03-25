@@ -10,5 +10,7 @@ public interface IUserDAO {
 
     List<User> fetchAll();
 
-    List<User> fetchUsers(String id) throws IOException;
+    User fetchById(int id);
+
+    void deleteById(int id);
 }
