@@ -26,7 +26,7 @@ public class MainController {
     /**
      * Handle the / endpoint
      *
-     * @return
+     * @return index
      */
     @RequestMapping("/")
     public String index(Model model) {
@@ -61,11 +61,10 @@ public class MainController {
      * 400: item not found
      *
      * @param id
-     * @return
+     * @return ResponseEntity(HttpStatus.OK)
      */
     @GetMapping("/item/{id}")
-    public ResponseEntity fetchItemById(@PathVariable("id") String id) {
-        return new ResponseEntity(HttpStatus.OK);
+    public ResponseEntity fetchItemById(@PathVariable("id") String id) { return new ResponseEntity(HttpStatus.OK);
     }
 
     /**
@@ -78,7 +77,7 @@ public class MainController {
      * 400: user not found
      *
      * @param id
-     * @return
+     * @return ResponseEntity(HttpStatus.OK)
      */
     @GetMapping("/user/{id}")
     public ResponseEntity fetchUserById(@PathVariable("id") String id) {
