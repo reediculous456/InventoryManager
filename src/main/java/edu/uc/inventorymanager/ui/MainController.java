@@ -39,12 +39,30 @@ public class MainController {
         return "index";
     }
 
+    /**
+     * Saves an Item and components within an item
+     *
+     * Returns one of the following status codes
+     * 200: Item Saved
+     * 400: error saving item
+     * @param item
+     * @return
+     * @throws Exception
+     */
     @RequestMapping("/saveItem")
     public String saveItem(Item item) throws Exception {
         itemService.save(item);
         return "index";
     }
 
+    /**
+     * Fetches all of the Items that have been created
+     *
+     * Returns one of the following status codes
+     * 200: Fetched all saved items
+     * 400: error fetching all items
+     * @return
+     */
     @GetMapping("/items")
     @ResponseBody
     public List<Item> fetchAllItems() {
