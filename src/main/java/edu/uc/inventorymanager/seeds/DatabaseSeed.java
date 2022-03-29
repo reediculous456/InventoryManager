@@ -56,11 +56,11 @@ public class DatabaseSeed implements CommandLineRunner {
             User user = userRepository.findById(1).get();
             ItemStatus statusAvailable = itemStatusRepository.findById(1).get();
             ItemStatus statusAssigned = itemStatusRepository.findById(2).get();
-
             Item item1 = new Item("2018 Macbook Pro", "Space Gray 2018 Macbook Pro with 16 GB of RAM, 2TB of storage, and Intel i7");
+            Item item2 = new Item("Dell XPS 17", "Black Dell XPS 17 with 8GB of RAM, 1TB of storage, and Intel i5");
+
             item1.setStatus(statusAvailable);
 
-            Item item2 = new Item("Dell XPS 17", "Black Dell XPS 17 with 8GB of RAM, 1TB of storage, and Intel i5");
             item2.setLocation("Cubicle 42J");
             item2.setAssignee(user);
             item2.setStatus(statusAssigned);

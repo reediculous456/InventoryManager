@@ -25,13 +25,13 @@ public class ItemStatus {
 
     @Override
     public boolean equals(Object o) {
+        ItemStatus that = (ItemStatus) o;
         if (this == o) {
             return true;
         }
         if ((o == null) || (Hibernate.getClass(this) != Hibernate.getClass(o))) {
             return false;
         }
-        ItemStatus that = (ItemStatus) o;
         return Objects.equals(id, that.id);
     }
 

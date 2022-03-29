@@ -38,13 +38,13 @@ public class Item {
 
     @Override
     public boolean equals(Object o) {
+        Item item = (Item) o;
         if (this == o) {
             return true;
         }
         if ((o == null) || (Hibernate.getClass(this) != Hibernate.getClass(o))) {
             return false;
         }
-        Item item = (Item) o;
         return Objects.equals(id, item.id);
     }
 

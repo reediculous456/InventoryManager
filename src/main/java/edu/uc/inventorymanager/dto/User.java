@@ -25,13 +25,13 @@ public class User {
 
     @Override
     public boolean equals(Object o) {
+        User user = (User) o;
         if (this == o) {
             return true;
         }
         if ((o == null) || (Hibernate.getClass(this) != Hibernate.getClass(o))) {
             return false;
         }
-        User user = (User) o;
         return Objects.equals(id, user.id);
     }
 
