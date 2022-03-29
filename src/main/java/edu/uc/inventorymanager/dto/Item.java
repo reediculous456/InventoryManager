@@ -41,7 +41,7 @@ public class Item {
         if (this == o) {
             return true;
         }
-        if (o == null || Hibernate.getClass(this) != Hibernate.getClass(o)) {
+        if ((o == null) || (Hibernate.getClass(this) != Hibernate.getClass(o))) {
             return false;
         }
         Item item = (Item) o;
