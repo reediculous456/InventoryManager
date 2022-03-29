@@ -26,9 +26,9 @@ public class ItemStatusDAOStub implements IItemStatusDAO {
     @Override
     public ItemStatus fetchById(int id) {
         return allItemStatuses.stream()
-                .filter(status -> status.getId() == id)
-                .findAny()
-                .orElse(null);
+            .filter(status -> status.getId() == id)
+            .findAny()
+            .orElse(null);
     }
 
     @Override
