@@ -7,12 +7,11 @@ import edu.uc.inventorymanager.dto.User;
 import edu.uc.inventorymanager.service.IItemService;
 import edu.uc.inventorymanager.service.IUserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -23,6 +22,8 @@ import java.util.List;
 public class MainController {
     @Autowired
     IItemService itemService;
+  
+    @Autowired
     IUserService userService;
 
     /**
@@ -32,11 +33,13 @@ public class MainController {
      */
     @RequestMapping("/")
     public String index(Model model) {
-        Item item = new Item("item", "Des");
-        item.setLocation("locale");
-        item.setAssignee(new User("John Doe"));
-        item.setStatus(new ItemStatus("Assigned"));
-        model.addAttribute(item);
+        Item newItem = new Item();
+        newItem.setLocation("locale");
+        newItem.setAssignee(new User("John Doe"));
+        newItem.setStatus(new ItemStatus("Assigned"));
+        model.addAttribute("newItem", newItem);
+        List<Item> items = itemService.fetchAll();
+        model.addAttribute("items", items);
         return "index";
     }
 
@@ -46,12 +49,13 @@ public class MainController {
         return "index";
     }
 
-    @GetMapping("/item")
+    @GetMapping("/items")
     @ResponseBody
     public List<Item> fetchAllItems() {
+        HttpHeaders headers = new HttpHeaders();
+        headers.setContentType(MediaType.APPLICATION_JSON);
         return itemService.fetchAll();
     }
-
 
     /**
      * Fetch item with given ID
