@@ -22,7 +22,7 @@ import java.util.List;
 public class MainController {
     @Autowired
     IItemService itemService;
-  
+
     @Autowired
     IUserService userService;
 
