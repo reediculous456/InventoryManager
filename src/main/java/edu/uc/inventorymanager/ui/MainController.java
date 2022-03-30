@@ -6,6 +6,8 @@ import edu.uc.inventorymanager.dto.ItemStatus;
 import edu.uc.inventorymanager.dto.User;
 import edu.uc.inventorymanager.service.IItemService;
 import edu.uc.inventorymanager.service.IUserService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
@@ -29,6 +31,8 @@ public class MainController {
     @Autowired
     IUserService userService;
 
+    Logger logger = LoggerFactory.getLogger(this.getClass());
+
     /**
      * Handle the / endpoint
      *
@@ -48,26 +52,32 @@ public class MainController {
 
     /**
      * Saves an Item and components within an item
-     *
+     * <p>
      * Returns one of the following status codes
      * 200: Item Saved
-     * 400: error saving item
+     * 500: error saving item
+     *
      * @param item
-     * @return
-     * @throws Exception
+     * @return response code
      */
-    @RequestMapping("/saveItem")
-    public String saveItem(Item item) throws Exception {
-        itemService.save(item);
-        return "index";
+    @RequestMapping("/save-item")
+    public ResponseEntity saveItem(Item item) {
+        try {
+            itemService.save(item);
+            return new ResponseEntity(HttpStatus.CREATED);
+        } catch (Exception e) {
+            logger.error("Failed to save item", e);
+            return new ResponseEntity(HttpStatus.INTERNAL_SERVER_ERROR);
+        }
     }
 
     /**
      * Fetches all of the Items that have been created
-     *
+     * <p>
      * Returns one of the following status codes
      * 200: Fetched all saved items
      * 400: error fetching all items
+     *
      * @return
      */
     @GetMapping("/items")
