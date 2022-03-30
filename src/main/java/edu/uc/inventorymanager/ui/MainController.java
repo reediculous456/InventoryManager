@@ -70,7 +70,8 @@ public class MainController {
         var item = itemService.fetchItemById(id);
         if (item == null) {
             return new ResponseEntity(HttpStatus.NOT_FOUND);
-        } else return new ResponseEntity(HttpStatus.OK);
+        }
+        return new ResponseEntity(HttpStatus.OK);
     }
 
     /**
@@ -90,6 +91,7 @@ public class MainController {
         var user = userService.fetchUserById(id);
         if (user == null) {
             return new ResponseEntity(HttpStatus.NOT_FOUND);
-        } else return new ResponseEntity(HttpStatus.OK);
+        }
+        return new ResponseEntity(HttpStatus.OK);
     }
 }
