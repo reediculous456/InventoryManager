@@ -5,8 +5,13 @@ import edu.uc.inventorymanager.dto.Item;
 import edu.uc.inventorymanager.dto.ItemStatus;
 import edu.uc.inventorymanager.dto.User;
 import edu.uc.inventorymanager.service.IItemService;
+import edu.uc.inventorymanager.service.IUserService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -23,6 +28,11 @@ public class MainController {
     @Autowired
     IItemService itemService;
 
+    @Autowired
+    IUserService userService;
+
+    Logger logger = LoggerFactory.getLogger(this.getClass());
+
     /**
      * Handle the / endpoint
      *
@@ -30,26 +40,53 @@ public class MainController {
      */
     @RequestMapping("/")
     public String index(Model model) {
-        Item item = new Item("item", "Des");
-        item.setLocation("locale");
-        item.setAssignee(new User("John Doe"));
-        item.setStatus(new ItemStatus("Assigned"));
-        model.addAttribute(item);
+        Item newItem = new Item();
+        newItem.setLocation("locale");
+        newItem.setAssignee(new User("John Doe"));
+        newItem.setStatus(new ItemStatus("Assigned"));
+        model.addAttribute("newItem", newItem);
+        List<Item> items = itemService.fetchAll();
+        model.addAttribute("items", items);
         return "index";
     }
 
-    @RequestMapping("/saveItem")
-    public String saveItem(Item item) throws Exception {
-        itemService.save(item);
-        return "index";
+    /**
+     * Saves an Item and components within an item
+     * <p>
+     * Returns one of the following status codes
+     * 200: Item Saved
+     * 500: error saving item
+     *
+     * @param item
+     * @return response code
+     */
+    @RequestMapping("/save-item")
+    public ResponseEntity saveItem(Item item) {
+        try {
+            itemService.save(item);
+            return new ResponseEntity(HttpStatus.CREATED);
+        } catch (Exception e) {
+            logger.error("Failed to save item", e);
+            return new ResponseEntity(HttpStatus.INTERNAL_SERVER_ERROR);
+        }
     }
 
-    @GetMapping("/item")
+    /**
+     * Fetches all of the Items that have been created
+     * <p>
+     * Returns one of the following status codes
+     * 200: Fetched all saved items
+     * 400: error fetching all items
+     *
+     * @return
+     */
+    @GetMapping("/items")
     @ResponseBody
     public List<Item> fetchAllItems() {
+        HttpHeaders headers = new HttpHeaders();
+        headers.setContentType(MediaType.APPLICATION_JSON);
         return itemService.fetchAll();
     }
-
 
     /**
      * Fetch item with given ID
@@ -58,30 +95,38 @@ public class MainController {
      * <p>
      * Returns one of the following status codes:
      * 200: item found
-     * 400: item not found
+     * 404: item not found
      *
      * @param id
      * @return
      */
     @GetMapping("/item/{id}")
-    public ResponseEntity fetchItemById(@PathVariable("id") String id) {
+    public ResponseEntity fetchItemById(@PathVariable("id") int id) {
+        var item = itemService.fetchItemById(id);
+        if (item == null) {
+            return new ResponseEntity(HttpStatus.NOT_FOUND);
+        }
         return new ResponseEntity(HttpStatus.OK);
     }
 
     /**
      * Fetch user with given ID
      * <p>
-     * Given the parameter id, find an user that corresponds to this unique id.
+     * Given the parameter id, find a user that corresponds to this unique id.
      * <p>
      * Returns one of the following status codes:
      * 200: user found
-     * 400: user not found
+     * 404: user not found
      *
      * @param id
      * @return
      */
     @GetMapping("/user/{id}")
-    public ResponseEntity fetchUserById(@PathVariable("id") String id) {
+    public ResponseEntity fetchUserById(@PathVariable("id") int id) {
+        var user = userService.fetchUserById(id);
+        if (user == null) {
+            return new ResponseEntity(HttpStatus.NOT_FOUND);
+        }
         return new ResponseEntity(HttpStatus.OK);
     }
 }
