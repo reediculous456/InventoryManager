@@ -5,6 +5,7 @@ import edu.uc.inventorymanager.dto.Item;
 import edu.uc.inventorymanager.dto.ItemStatus;
 import edu.uc.inventorymanager.dto.User;
 import edu.uc.inventorymanager.service.IItemService;
+import edu.uc.inventorymanager.service.IItemStatusService;
 import edu.uc.inventorymanager.service.IUserService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -28,6 +29,9 @@ public class MainController {
     @Autowired
     IUserService userService;
 
+    @Autowired
+    IItemStatusService itemStatusService;
+
     Logger logger = LoggerFactory.getLogger(this.getClass());
 
     /**
@@ -41,8 +45,10 @@ public class MainController {
         model.addAttribute("newItem", newItem);
         List<Item> items = itemService.fetchAll();
         List<User> users = userService.fetchALl();
+        List<ItemStatus> statuses = itemStatusService.fetchALl();
         model.addAttribute("items", items);
         model.addAttribute("users", users);
+        model.addAttribute("statuses", statuses);
         return "index";
     }
 
