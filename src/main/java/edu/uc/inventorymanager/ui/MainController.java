@@ -15,10 +15,7 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -54,20 +51,23 @@ public class MainController {
      * Saves an Item and components within an item
      * <p>
      * Returns one of the following status codes
-     * 200: Item Saved
+     * 201: Item Saved
      * 500: error saving item
      *
      * @param item
      * @return response code
      */
-    @RequestMapping("/save-item")
+    @PostMapping(value = "/save-item", consumes = "multipart/form-data", produces = "application/json")
     public ResponseEntity saveItem(Item item) {
         try {
-            itemService.save(item);
-            return new ResponseEntity(HttpStatus.CREATED);
+            Item newItem = null;
+            HttpHeaders headers = new HttpHeaders();
+            headers.setContentType(MediaType.APPLICATION_JSON);
+            newItem = itemService.save(item);
+            return new ResponseEntity(newItem, headers, HttpStatus.CREATED);
         } catch (Exception e) {
             logger.error("Failed to save item", e);
-            return new ResponseEntity(HttpStatus.INTERNAL_SERVER_ERROR);
+            return new ResponseEntity(HttpStatus.CREATED);
         }
     }
 

@@ -25,7 +25,7 @@
 <main class="container">
     <div class="row">
         <div class="col">
-            <form action="#" th:action="@{/saveItem}" th:object="${newItem}" method="GET">
+            <form th:action="@{/save-item}" th:object="${newItem}" enctype="multipart/form-data" method="POST">
                 <div class="mb-3">
                     <label for="item-name" class="form-label">Item name:</label>
                     <input id="item-name" class="form-control" type="text" name="name" th:field="*{name}"/>
