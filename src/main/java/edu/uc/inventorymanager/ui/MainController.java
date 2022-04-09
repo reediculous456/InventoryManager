@@ -38,12 +38,11 @@ public class MainController {
     @RequestMapping("/")
     public String index(Model model) {
         Item newItem = new Item();
-        newItem.setLocation("locale");
-        newItem.setAssignee(new User("John Doe"));
-        newItem.setStatus(new ItemStatus("Assigned"));
         model.addAttribute("newItem", newItem);
         List<Item> items = itemService.fetchAll();
+        List<User> users = userService.fetchALl();
         model.addAttribute("items", items);
+        model.addAttribute("users", users);
         return "index";
     }
 

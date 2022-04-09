@@ -41,8 +41,9 @@
                 </div>
                 <div class="mb-3">
                     <label for="item-assigned-to" class="form-label">Assigned to:</label>
-                    <input id="item-assigned-to" class="form-control" type="text" name="assigned-to"
-                           th:field="*{assignee}"/>
+                    <select id="item-assigned-to" class="form-control" th:field="*{assignee}">
+                        <option th:each="user : ${users}" th:value="${user.id}" th:text="${user.name}"></option>
+                    </select>
                 </div>
                 <div class="mb-3">
                     <label for="item-status" class="form-label">Item Status:</label>
