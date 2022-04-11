@@ -51,6 +51,10 @@ public class MainController {
         model.addAttribute("statuses", statuses);
         return "index";
     }
+    @RequestMapping("/about")
+    public String about() {
+        return "about";
+    }
 
     /**
      * Saves an Item and components within an item
