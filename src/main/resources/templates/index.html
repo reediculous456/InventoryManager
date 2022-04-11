@@ -75,8 +75,8 @@
                     <td th:text="${item.name != null} ? ${item.name} : 'N/A'"></td>
                     <td th:text="${item.description != null} ? ${item.description} : 'N/A'"></td>
                     <td th:text="${item.location != null} ? ${item.location} : 'N/A'"></td>
-                    <td th:text="${item.assignee != null} ? ${item.assignee} : 'N/A'"></td>
-                    <td th:text="${item.status != null} ? ${item.status} : 'N/A'"></td>
+                    <td th:text="${item.assignee?.getName() != null} ? ${item.assignee?.getName()} : 'Not Assigned'"></td>
+                    <td th:text="${item.status?.getName() != null} ? ${item.status?.getName()} : 'N/A'"></td>
                 </tr>
                 </tbody>
             </table>
