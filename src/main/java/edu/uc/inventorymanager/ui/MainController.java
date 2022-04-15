@@ -57,6 +57,10 @@ public class MainController {
         return "about";
     }
 
+    @RequestMapping("/itemPage")
+    public String itemPage() {
+        return "itemPage";
+    }
     /**
      * Saves an Item and components within an item
      * <p>

@@ -1,4 +1,4 @@
-package edu.uc.inventorymanager.seeds;
+package edu.uc.inventorymanager.dao.seeds;
 
 import edu.uc.inventorymanager.dao.ItemRepository;
 import edu.uc.inventorymanager.dao.ItemStatusRepository;
