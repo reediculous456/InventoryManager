@@ -24,8 +24,28 @@
 <main class="container">
     <div class="row">
         <div class="col">
-            <h1>Items</h1>
-            <p>This is the page for all of the items</p>
+            <table class="table table-striped table-bordered">
+                <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Description</th>
+                    <th>Location</th>
+                    <th>Assigned To</th>
+                    <th>Stock Status</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="item: ${items}">
+                    <td th:text="${item.id != null} ? ${item.id} : 'N/A'"></td>
+                    <td th:text="${item.name != null} ? ${item.name} : 'N/A'"></td>
+                    <td th:text="${item.description != null} ? ${item.description} : 'N/A'"></td>
+                    <td th:text="${item.location != null} ? ${item.location} : 'N/A'"></td>
+                    <td th:text="${item.assignee?.getName() != null} ? ${item.assignee?.getName()} : 'Not Assigned'"></td>
+                    <td th:text="${item.status?.getName() != null} ? ${item.status?.getName()} : 'N/A'"></td>
+                </tr>
+                </tbody>
+            </table>
         </div>
     </div>
 </main>

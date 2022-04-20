@@ -43,10 +43,8 @@ public class MainController {
     public String index(Model model) {
         Item newItem = new Item();
         model.addAttribute("newItem", newItem);
-        List<Item> items = itemService.fetchAll();
         List<User> users = userService.fetchALl();
         List<ItemStatus> statuses = itemStatusService.fetchALl();
-        model.addAttribute("items", items);
         model.addAttribute("users", users);
         model.addAttribute("statuses", statuses);
         return "index";
@@ -58,7 +56,9 @@ public class MainController {
     }
 
     @RequestMapping("/item-page")
-    public String itemPage() {
+    public String itemPage(Model model) {
+        List<Item> items = itemService.fetchAll();
+        model.addAttribute("items", items);
         return "itemPage";
     }
     /**
@@ -81,7 +81,7 @@ public class MainController {
         } catch (Exception e) {
             logger.error("Failed to save item", e);
         }
-        return "redirect:/";
+        return "redirect:/item-page";
     }
 
     /**
