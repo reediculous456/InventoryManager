@@ -33,6 +33,7 @@
                     <th>Location</th>
                     <th>Assigned To</th>
                     <th>Stock Status</th>
+                    <th>Actions</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -43,6 +44,7 @@
                     <td th:text="${item.location != null} ? ${item.location} : 'N/A'"></td>
                     <td th:text="${item.assignee?.getName() != null} ? ${item.assignee?.getName()} : 'Not Assigned'"></td>
                     <td th:text="${item.status?.getName() != null} ? ${item.status?.getName()} : 'N/A'"></td>
+                    <td><a th:href="'/item/' + ${item.id}" type="button" class="btn btn-primary">Edit</a></td>
                 </tr>
                 </tbody>
             </table>

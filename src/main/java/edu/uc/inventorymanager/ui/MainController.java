@@ -50,17 +50,44 @@ public class MainController {
         return "index";
     }
 
+    /**
+     * Handle the /about endpoint
+     *
+     * @return
+     */
     @RequestMapping("/about")
     public String about() {
         return "about";
     }
 
+    /**
+     * Handle the /item-page endpoint
+     *
+     * @return
+     */
     @RequestMapping("/item-page")
     public String itemPage(Model model) {
         List<Item> items = itemService.fetchAll();
         model.addAttribute("items", items);
         return "itemPage";
     }
+
+    /**
+     * Handle the /item/{id} endpoint
+     *
+     * @return
+     */
+    @RequestMapping("/item/{id}")
+    public String editItem(Model model, @PathVariable(value = "id", required = true) int id) {
+        Item item = itemService.fetchItemById(id);
+        model.addAttribute("item", item);
+        List<User> users = userService.fetchALl();
+        List<ItemStatus> statuses = itemStatusService.fetchALl();
+        model.addAttribute("users", users);
+        model.addAttribute("statuses", statuses);
+        return "editItem";
+    }
+
     /**
      * Saves an Item and components within an item
      * <p>
@@ -71,13 +98,26 @@ public class MainController {
      * @param item
      * @return response code
      */
-    @PostMapping(value = "/save-item", consumes = "multipart/form-data", produces = "application/json")
+    @PostMapping(value = "/save-item", consumes = "multipart/form-data")
     public String saveItem(Item item) {
         try {
             Item newItem = null;
             HttpHeaders headers = new HttpHeaders();
             headers.setContentType(MediaType.APPLICATION_JSON);
             newItem = itemService.save(item);
+        } catch (Exception e) {
+            logger.error("Failed to save item", e);
+        }
+        return "redirect:/item-page";
+    }
+
+    @PostMapping(value = "/update-item", consumes = "multipart/form-data")
+    public String updateItem(Item item) {
+        try {
+            Item updatedItem = null;
+            HttpHeaders headers = new HttpHeaders();
+            headers.setContentType(MediaType.APPLICATION_JSON);
+            updatedItem = itemService.save(item);
         } catch (Exception e) {
             logger.error("Failed to save item", e);
         }
@@ -99,27 +139,6 @@ public class MainController {
         HttpHeaders headers = new HttpHeaders();
         headers.setContentType(MediaType.APPLICATION_JSON);
         return itemService.fetchAll();
-    }
-
-    /**
-     * Fetch item with given ID
-     * <p>
-     * Given the parameter id, find an item that corresponds to this unique id.
-     * <p>
-     * Returns one of the following status codes:
-     * 200: item found
-     * 404: item not found
-     *
-     * @param id
-     * @return
-     */
-    @GetMapping("/item/{id}")
-    public ResponseEntity fetchItemById(@PathVariable("id") int id) {
-        var item = itemService.fetchItemById(id);
-        if (item == null) {
-            return new ResponseEntity(HttpStatus.NOT_FOUND);
-        }
-        return new ResponseEntity(HttpStatus.OK);
     }
 
     /**
