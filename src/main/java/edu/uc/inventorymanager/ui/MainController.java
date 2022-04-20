@@ -72,17 +72,16 @@ public class MainController {
      * @return response code
      */
     @PostMapping(value = "/save-item", consumes = "multipart/form-data", produces = "application/json")
-    public ResponseEntity saveItem(Item item) {
+    public String saveItem(Item item) {
         try {
             Item newItem = null;
             HttpHeaders headers = new HttpHeaders();
             headers.setContentType(MediaType.APPLICATION_JSON);
             newItem = itemService.save(item);
-            return new ResponseEntity(newItem, headers, HttpStatus.CREATED);
         } catch (Exception e) {
             logger.error("Failed to save item", e);
-            return new ResponseEntity(HttpStatus.CREATED);
         }
+        return "redirect:/";
     }
 
     /**
