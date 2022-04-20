@@ -57,7 +57,7 @@ public class MainController {
         return "about";
     }
 
-    @RequestMapping("/itemPage")
+    @RequestMapping("/item-page")
     public String itemPage() {
         return "itemPage";
     }
