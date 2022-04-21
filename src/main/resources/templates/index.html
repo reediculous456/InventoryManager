@@ -41,14 +41,14 @@
                 </div>
                 <div class="mb-3">
                     <label for="item-assigned-to" class="form-label">Assigned to:</label>
-                    <select id="item-assigned-to" class="form-control" th:field="*{assignee}">
+                    <select id="item-assigned-to" class="form-select" th:field="*{assignee}">
                         <option value="" selected>None</option>
                         <option th:each="user : ${users}" th:value="${user.id}" th:text="${user.name}"></option>
                     </select>
                 </div>
                 <div class="mb-3">
                     <label for="item-status" class="form-label">Item Status:</label>
-                    <select id="item-status" class="form-control" th:field="*{status}">
+                    <select id="item-status" class="form-select" th:field="*{status}">
                         <option th:each="status : ${statuses}" th:value="${status.id}" th:text="${status.name}"></option>
                     </select>
                 </div>
