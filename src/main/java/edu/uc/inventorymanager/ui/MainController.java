@@ -43,7 +43,7 @@ public class MainController {
     public String index(Model model) {
         Item newItem = new Item();
         model.addAttribute("newItem", newItem);
-        List<User> users = userService.fetchALl();
+        List<User> users = userService.fetchAll();
         List<ItemStatus> statuses = itemStatusService.fetchALl();
         model.addAttribute("users", users);
         model.addAttribute("statuses", statuses);
@@ -81,7 +81,7 @@ public class MainController {
     public String editItem(Model model, @PathVariable(value = "id", required = true) int id) {
         Item item = itemService.fetchItemById(id);
         model.addAttribute("item", item);
-        List<User> users = userService.fetchALl();
+        List<User> users = userService.fetchAll();
         List<ItemStatus> statuses = itemStatusService.fetchALl();
         model.addAttribute("users", users);
         model.addAttribute("statuses", statuses);

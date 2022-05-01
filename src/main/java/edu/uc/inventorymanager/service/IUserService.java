@@ -7,7 +7,7 @@ import java.util.List;
 public interface IUserService {
     User save(User user) throws Exception;
 
-    List<User> fetchALl();
+    List<User> fetchAll();
 
     User fetchUserById(int id);
 }
